@@ -1,0 +1,12 @@
+{
+  /** Enforce LF as line ending */
+  "files.eol": "\n",
+
+  /** Normalize trailing whitespaces */
+  "editor.trimAutoWhitespace": true,
+  "files.trimTrailingWhitespace": true,
+
+  /** Add specific filename extensions when importing */
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.importModuleSpecifierEnding": "js"
+}

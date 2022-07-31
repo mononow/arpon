@@ -1,0 +1,32 @@
+{
+  "name": "@arpon/core",
+  "version": "0.0.0",
+  "type": "module",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "description": "Core package",
+  "author": "HTOMAN - Arpon",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HTOMAN/Arpon.git",
+    "directory": "packages/core"
+  },
+  "keywords": [
+    "HTOMAN",
+    "Arpon",
+    "Core"
+  ],
+  "bugs": {
+    "url": "https://github.com/HTOMAN/Arpon/issues"
+  },
+  "homepage": "https://github.com/HTOMAN/Arpon/blob/main/README.md",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "start": "tsc -w -d",
+    "prebuild": "rimraf dist types"
+  }
+}
