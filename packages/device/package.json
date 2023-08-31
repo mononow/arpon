@@ -1,0 +1,29 @@
+{
+  "name": "@mononow/device",
+  "version": "10.5.0",
+  "description": "Arpon device module",
+  "author": "MONO.now",
+  "type": "module",
+  "keywords": [
+    "mononow",
+    "POS",
+    "devices"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mononow/arpon.git",
+    "directory": "packages/device"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">= 14",
+    "npm": ">= 7"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "main": "index.js"
+}

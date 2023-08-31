@@ -1,0 +1,32 @@
+{
+  "name": "@mononow/commitlint-config-standard",
+  "description": "Arpon standard conventional commits for git-cz and commitlint",
+  "version": "0.0.10",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "conventional-commits",
+    "commitlintplugin",
+    "mononow",
+    "commitlint",
+    "svelte",
+    "git-cz",
+    "cz-git",
+    "mononow",
+    "sdk",
+    "git"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mononow/arpon.git",
+    "directory": "packages/commitlint"
+  },
+  "dependencies": {
+    "commitizen": "^4.3.0",
+    "commitlint": "^17.6.6",
+    "cz-git": "^1.7.0"
+  }
+}

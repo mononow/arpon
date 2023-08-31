@@ -1,0 +1,11 @@
+{
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "useNx": true,
+  "ignoreChanges": [
+    "**/node_modules/**",
+    "**/test/**",
+    ".npmrc"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@mononow/date",
+  "version": "10.5.0",
+  "description": "Arpon date module",
+  "author": "MONO.now",
+  "type": "module",
+  "keywords": [
+    "mononow",
+    "date"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mononow/arpon.git",
+    "directory": "packages/date"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">= 14",
+    "npm": ">= 7"
+  },
+  "dependencies": {
+    "date-fns": "2.28.0",
+    "date-fns-tz": "1.2.2"
+  },
+  "main": "index.js"
+}

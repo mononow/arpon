@@ -1,32 +1,39 @@
 {
-  "name": "@arpon/core",
-  "version": "0.0.0",
-  "type": "module",
-  "license": "UNLICENSED",
+  "name": "@mononow/core",
+  "version": "10.0.0",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
-  "description": "Core package",
-  "author": "HTOMAN - Arpon",
+  "description": "Arpon QT bindings, wrappers and embbebded hardware handlers",
+  "author": "MONO.now",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">= 8 || <= 14",
+    "npm": ">= 7"
+  },
+  "files": [
+    "*",
+    "dist",
+    "!tsconfig.json",
+    "!keymap/*.ts",
+    "!currency/*.ts",
+    "!index.ts"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HTOMAN/Arpon.git",
+    "url": "git+https://github.com/mononow/arpon.git",
     "directory": "packages/core"
   },
-  "keywords": [
-    "HTOMAN",
-    "Arpon",
-    "Core"
-  ],
-  "bugs": {
-    "url": "https://github.com/HTOMAN/Arpon/issues"
-  },
-  "homepage": "https://github.com/HTOMAN/Arpon/blob/main/README.md",
-  "files": [
-    "dist",
-    "types"
-  ],
   "scripts": {
-    "start": "tsc -w -d",
-    "prebuild": "rimraf dist types"
-  }
+    "start": "yarn run prebuild && tsc -d -w",
+    "prebuild": "rimraf dist types",
+    "compile": "tsc -p ./tsconfig.json",
+    "build": "run-s prebuild compile",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.0.4"
+  },
+  "gitHead": "e919d0e654f8134f157bf4f6e078685f5dd8a000"
 }

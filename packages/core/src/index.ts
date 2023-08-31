@@ -1,31 +1,6 @@
-export class Node {}
+import extend from './extend.js';
+import * as KEYBOARD from './keymap/index.js';
 
-export class Element extends Node {
-  constructor() {
-    super();
-  }
+export { extend, KEYBOARD };
 
-  public body() {}
-}
-
-export class UIElement extends Element {
-  public content?: string = '';
-  constructor() {
-    super();
-  }
-}
-
-// export class View
-
-export class Text extends UIElement {
-  constructor(content?: string) {
-    super();
-    this.content = content;
-  }
-
-  override body() {
-    return [];
-  }
-}
-
-// customElements.define('ui-text', Text);
+export default extend;

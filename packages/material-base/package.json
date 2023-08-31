@@ -1,0 +1,36 @@
+{
+  "name": "@mononow/jade-base",
+  "version": "0.0.1",
+  "author": "MONO.now",
+  "description": "Unstyled library of Svelte UI components and fundamental elements for Arpon",
+  "main": "./src/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "mononow",
+    "jade",
+    "svelte",
+    "typescript",
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mononow/arpon.git",
+    "directory": "packages/jade"
+  },
+  "license": "Apache-2.0",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "devDependencies": {
+    "@storybook/svelte": "^7.0.12"
+  },
+  "peerDependencies": {
+    "eslint": "^8",
+    "svelte": "^3",
+    "typescript": "^5",
+    "webpack": "^5"
+  }
+}

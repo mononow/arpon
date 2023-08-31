@@ -1,0 +1,8 @@
+node_modules
+dist
+packages/components/Keyboard/lib
+packages/components/**/example/index.html
+!*.html
+!*.svelte
+!*.css
+!*.pcss

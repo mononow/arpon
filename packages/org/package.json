@@ -1,0 +1,27 @@
+{
+  "name": "@mononow/org",
+  "version": "10.0.0",
+  "description": "Organization methods for mononow apps",
+  "svelte": "Image.html",
+  "module": "index.js",
+  "sideEffects": false,
+  "author": "MONO.now",
+  "keywords": [
+    "mononow",
+    "organization"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mononow/arpon.git",
+    "directory": "packages/org"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">= 14",
+    "npm": ">= 7"
+  },
+  "gitHead": ""
+}

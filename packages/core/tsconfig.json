@@ -1,8 +1,28 @@
 {
-  "extends": "../../tsconfig.common",
   "compilerOptions": {
+    "noImplicitAny": true,
     "outDir": "dist",
-    "declarationDir": "types"
+    "lib": [
+      "esnext",
+      "DOM"
+    ],
+    "target": "es6",
+    "module": "es2020",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "declarationDir": "types",
+    "allowJs": true,
+    "sourceMap": true,
+    "inlineSourceMap": false,
+    "declaration": true,
+    "downlevelIteration": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "isolatedModules": true,
+    "removeComments": false
   },
-  "include": ["src/**/*.ts"]
+  "include": [
+    "./src",
+  ]
 }

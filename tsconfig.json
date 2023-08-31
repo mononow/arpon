@@ -1,0 +1,11 @@
+{
+  "extends": "@mononow/configs/tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "baseUrl": "./",
+  },
+  "exclude": [
+    "**/.*/",
+    "**/node_modules"
+  ]
+}
