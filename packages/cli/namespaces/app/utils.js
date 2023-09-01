@@ -26,7 +26,7 @@ exports.getTsNodeProjectPathVars = () => {
   if (!existsSync(tsNodeProjectPath)) {
     throw new Error(
       pico.red(
-        `Typescript config for @mononow/webpack not found as "${tsNodeProjectPath}"`,
+        `Typescript config for @arpon/webpack not found as "${tsNodeProjectPath}"`,
       ),
     );
   }

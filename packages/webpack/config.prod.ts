@@ -6,8 +6,8 @@ import {
   BUNDLE_NAME,
   IS_PROD,
   ORG_ASSETS_FOLDER,
-} from "@mononow/configs/envModes.cjs";
-import { fromWorkingDir, getPackage } from "@mononow/utils";
+} from "@arpon/configs/envModes.cjs";
+import { fromWorkingDir, getPackage } from "@arpon/utils";
 
 // Plugins
 import FileManagerPlugin from "filemanager-webpack-plugin";

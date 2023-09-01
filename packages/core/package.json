@@ -1,5 +1,5 @@
 {
-  "name": "@mononow/core",
+  "name": "@arpon/core",
   "version": "10.0.0",
   "main": "dist/index.js",
   "types": "types/index.d.ts",

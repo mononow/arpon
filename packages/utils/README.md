@@ -1,17 +1,17 @@
-# `@mononow/utils`
+# `@arpon/utils`
 
-O pacote `@mononow/utils` contém métodos úteis para facilitar o desenvolvimento de aplicativos Arpon.
+O pacote `@arpon/utils` contém métodos úteis para facilitar o desenvolvimento de aplicativos Arpon.
 
 ## UI
 
-`import * as UI from '@mononow/utils/ui.js';`
+`import * as UI from '@arpon/utils/ui.js';`
 
 ### `timeout(delay: Number): Promise`
 
 `UI.timeout()` move a execução do script para o final da pilha de execução. É uma simples abstração de um `setTimeout` que retorna uma `Promise`.
 
 ```js
-import { timeout } from "@mononow/utils/ui.js";
+import { timeout } from "@arpon/utils/ui.js";
 
 function init() {
   console.log("Log imediato");
@@ -26,7 +26,7 @@ init();
 Com isso, é possível utilizar `async/await` para facilitar a leitura de alguns métodos:
 
 ```js
-import { timeout } from "@mononow/utils/ui.js";
+import { timeout } from "@arpon/utils/ui.js";
 
 async function init() {
   console.log("Log imediato");
@@ -39,14 +39,14 @@ init();
 
 ## Money
 
-`import * as Money from '@mononow/utils/money.js';`
+`import * as Money from '@arpon/utils/money.js';`
 
 ### `format(value: Number): string`
 
 `Money.format()` formata um valor númerico para um formato de dinheiro:
 
 ```js
-import { format } from "@mononow/utils/money.js";
+import { format } from "@arpon/utils/money.js";
 
 format(100); // '100,00'
 format(1000); // '1.000,00'
@@ -59,7 +59,7 @@ format(1000000.27); // '1.000.000,27'
 `Money.padZero()` adiciona um `0` para valores numéricos menores que `10` or _strings_ de tamanho `1`.
 
 ```js
-import { padZero } from "@mononow/utils/money.js";
+import { padZero } from "@arpon/utils/money.js";
 
 padZero(1); // '01'
 padZero("2"); // '02'
@@ -78,7 +78,7 @@ padZero("230"); // '230'
 `Money.round()`, `Money.ceil()`, `Money.floor()` são similares aos métodos `Math.*` de mesmo nome. A principal diferença é que lidam com alguns erros de arrendondamento da linguagem e levam em conta o valor decimal.
 
 ```js
-import { round, ceil, floor } from "@mononow/utils/money.js";
+import { round, ceil, floor } from "@arpon/utils/money.js";
 
 Math.round(1.005); // 1
 round(1.005); // 1.01
@@ -92,7 +92,7 @@ ceil(127.77 / 10); // 12.78
 
 ## Date
 
-`import * as DateUtils from '@mononow/utils/date.js';`
+`import * as DateUtils from '@arpon/utils/date.js';`
 
 ### `format(date: Date, mask: string): string`
 
@@ -116,7 +116,7 @@ Os `tokens` suportados são:
 - ss - segundo: 00..59
 
 ```js
-import { format } from '@mononow/utils/date.js';
+import { format } from '@arpon/utils/date.js';
 
 format(new Date(2019, 1, 20), 'dd/mm/yyyy')) // 20/02/2019
 format(new Date(2019, 1, 20, 20, 30, 55), 'HH:MM:ss')) // 20:30:55

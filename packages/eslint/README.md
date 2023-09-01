@@ -7,7 +7,7 @@ Arpon ESLint config for Svelte and Node.js projects, utilizing TypeScript, Prett
 1. Install:
 
 ```bash
-npm install --save-dev @mononow/eslint-config eslint
+npm install --save-dev @arpon/eslint-config eslint
 ```
 
 2. Enable this configuration in your ESlint configuration file (e.g. `.eslintrc`):

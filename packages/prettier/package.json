@@ -1,5 +1,5 @@
 {
-  "name": "@mononow/prettier-config",
+  "name": "@arpon/prettier-config",
   "description": "Prettier config for Arpon SDK",
   "version": "1.0.0",
   "license": "Apache-2.0",

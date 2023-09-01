@@ -1,4 +1,4 @@
-# @mononow/cli
+# @arpon/cli
 
 > A CLI to help developing Arpon Applications
 

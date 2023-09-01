@@ -1,5 +1,8 @@
-const { IS_TEST: IS_TEST_FN, IS_WATCHING: IS_WATCHING_FN } = require('@mononow/configs/envModes.cjs');
-const moduleResolverConfig = require('./lib/module-resolver-config.cjs');
+const {
+  IS_TEST: IS_TEST_FN,
+  IS_WATCHING: IS_WATCHING_FN,
+} = require("@arpon/configs/envModes.cjs");
+const moduleResolverConfig = require("./lib/module-resolver-config.cjs");
 
 const IS_TEST = IS_TEST_FN();
 const IS_WATCHING = IS_WATCHING_FN();
@@ -9,39 +12,45 @@ const presetEnvOptions = {
   loose: true,
 
   /** Only parse modules if testing. If not, let bundler handle it */
-  modules: process.env.NODE_ENV === 'test' ? 'commonjs' : process.env.BABEL_MODULES || false,
+  modules:
+    process.env.NODE_ENV === "test"
+      ? "commonjs"
+      : process.env.BABEL_MODULES || false,
   debug: false,
   forceAllTransforms: true,
 };
 
 if (IS_TEST) {
   presetEnvOptions.targets = {
-    node: 'current',
+    node: "current",
   };
 }
 
 const config = {
-  presets: [['@babel/preset-env', presetEnvOptions], '@babel/preset-typescript'],
+  presets: [
+    ["@babel/preset-env", presetEnvOptions],
+    "@babel/preset-typescript",
+  ],
   plugins: [
     moduleResolverConfig,
 
     /** Transpile dynamic imports and async/await */
-    IS_TEST && 'istanbul',
-    IS_TEST && 'dynamic-import-node',
-    IS_TEST && '@babel/plugin-transform-runtime',
+    IS_TEST && "istanbul",
+    IS_TEST && "dynamic-import-node",
+    IS_TEST && "@babel/plugin-transform-runtime",
 
     /** Lodash */
-    (IS_WATCHING || IS_TEST) && 'lodash',
+    (IS_WATCHING || IS_TEST) && "lodash",
 
     /** Accept dynamic import syntax and leave it to bundler */
-    !IS_TEST && '@babel/plugin-syntax-dynamic-import',
-    '@babel/plugin-proposal-optional-chaining',
-    '@babel/plugin-proposal-nullish-coalescing-operator',
-    ['@babel/plugin-proposal-class-properties', { loose: true }],
+    !IS_TEST && "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-optional-chaining",
+    "@babel/plugin-proposal-nullish-coalescing-operator",
+    ["@babel/plugin-proposal-class-properties", { loose: true }],
   ].filter(Boolean),
   env: {
     production: {
-      plugins: [['react-remove-properties', { properties: ['data-test'] }]],
+      plugins: [["react-remove-properties", { properties: ["data-test"] }]],
     },
   },
 };

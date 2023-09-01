@@ -1,5 +1,5 @@
-import getBaseDriver from './internal/base.js';
-import modifier from './internal/modifier.js';
+import getBaseDriver from "./internal/base.js";
+import modifier from "./internal/modifier.js";
 
 /**
  * Used to extend a driver with the base driver
@@ -8,8 +8,8 @@ import modifier from './internal/modifier.js';
  * @returns
  */
 export default function (driver, ...modifiers) {
-  if (__DEV__ && typeof driver === 'undefined') {
-    throw new Error('[@mononow/pos] Could not find the loaded driver.');
+  if (__DEV__ && typeof driver === "undefined") {
+    throw new Error("[@arpon/pos] Could not find the loaded driver.");
   }
 
   return modifier(driver, ...modifiers, getBaseDriver());

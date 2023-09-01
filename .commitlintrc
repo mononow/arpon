@@ -1,5 +1,5 @@
 {
   "extends": [
-    "@mononow/commitlint-config-standard"
+    "@arpon/commitlint-config-standard"
   ]
 }

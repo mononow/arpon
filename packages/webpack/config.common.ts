@@ -1,15 +1,15 @@
 /// <reference types="./config.common.d.ts" />
 import * as webpack from "webpack";
 import { merge } from "webpack-merge";
-import { fromWorkingDir, clientEnvironment, getPackage } from "@mononow/utils";
+import { fromWorkingDir, clientEnvironment, getPackage } from "@arpon/utils";
 import {
   Css,
   ExtractCss,
   PostCss,
   Svelte,
   TypeScript,
-} from "@mononow/configs/loaders";
-import { Babel, BabelSvelte } from "@mononow/babel-config/loader";
+} from "@arpon/configs/loaders";
+import { Babel, BabelSvelte } from "@arpon/babel-config/loader";
 
 // Plugins
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
@@ -26,7 +26,7 @@ import {
   IS_POS,
   IS_TEST,
   IS_STORYBOOK,
-} from "@mononow/configs/envModes.cjs";
+} from "@arpon/configs/envModes.cjs";
 
 import ArponLogger from "./plugins/InfrastructureMamaLogger";
 

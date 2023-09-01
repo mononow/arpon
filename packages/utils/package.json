@@ -1,5 +1,5 @@
 {
-  "name": "@mononow/utils",
+  "name": "@arpon/utils",
   "version": "10.0.0",
   "description": "Utility methods for mononow apps",
   "type": "module",

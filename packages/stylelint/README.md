@@ -7,14 +7,14 @@
 1. Install:
 
 ```bash
-npm install --save-dev @mononow/stylelint-config stylelint
+npm install --save-dev @arpon/stylelint-config stylelint
 ```
 
 2. Enable this configuration in your Stylelint configuration file (e.g. `.stylelintrc`):
 
 ```json
 {
-  "extends": "@mononow/stylelint-config"
+  "extends": "@arpon/stylelint-config"
 }
 ```
 
@@ -22,7 +22,7 @@ npm install --save-dev @mononow/stylelint-config stylelint
 >
 > ```js
 > module.exports = {
->   extends: " @mononow/stylelint-config",
+>   extends: " @arpon/stylelint-config",
 >   // ... overwrites
 > };
 > ```
@@ -30,7 +30,7 @@ npm install --save-dev @mononow/stylelint-config stylelint
 #### This shareable config expands to the following:
 
 ```js
-/** @mononow/stylelint-config/index.js */
+/** @arpon/stylelint-config/index.js */
 {
   extends: [
     'stylelint-config-html/html',

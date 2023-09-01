@@ -1,5 +1,5 @@
 {
-  "name": "@mononow/testing",
+  "name": "@arpon/testing",
   "version": "1.0.0",
   "description": "Svelte / Unit / E2E testing configuration for Arpon applications",
   "type": "module",
@@ -24,15 +24,15 @@
     "node": ">= 14"
   },
   "dependencies": {
+    "@arpon/babel-config": "workspace:*",
+    "@arpon/configs": "workspace:*",
+    "@arpon/webpack": "workspace:*",
     "@babel/core": "^7",
     "@babel/plugin-transform-runtime": "^7.21.4",
     "@babel/preset-env": "^7",
     "@babel/preset-typescript": "^7",
     "@cypress/code-coverage": "^3.10.4",
     "@cypress/webpack-preprocessor": "^5.17.1",
-    "@mononow/babel-config": "workspace:*",
-    "@mononow/configs": "workspace:*",
-    "@mononow/webpack": "workspace:*",
     "@testing-library/cypress": "^9.0.0",
     "@testing-library/dom": "^9.3.0",
     "@testing-library/jest-dom": "^5.16.5",

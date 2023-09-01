@@ -1,3 +1,3 @@
-import preprocess from '@mononow/configs/svelte';
+import preprocess from "@arpon/configs/svelte";
 
 export default preprocess;

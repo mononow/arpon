@@ -1,4 +1,4 @@
-declare module "@mononow/configs/envModes.cjs" {
+declare module "@arpon/configs/envModes.cjs" {
   const NODE_ENV: string | undefined;
   const WEINRE_IP: string | undefined;
   const REMOTEJS: string | undefined;

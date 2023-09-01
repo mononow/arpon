@@ -470,14 +470,14 @@ export function hasGprs() {
  * #### DEPRECATED ####
  * #####################
  *
- * @description deprecated methods since @mononow/utils v6.0.0
+ * @description deprecated methods since @arpon/utils v6.0.0
  *
  */
 
 /**
  * High DPI devices
  *
- * @DEPRECATED since @mononow/utils v6.0.0
+ * @DEPRECATED since @arpon/utils v6.0.0
  *
  * @description A list of devices with high dpi
  * @returns {array}
@@ -485,7 +485,7 @@ export function hasGprs() {
 export const HIGH_DPI_DEVICES = [MODELS.Q92, MODELS.D199];
 
 /**
- * @DEPRECATED since @mononow/utils v6.0.0
+ * @DEPRECATED since @arpon/utils v6.0.0
  *
  * @description If current model have a high DPI screen
  * @returns {boolean}
@@ -497,7 +497,7 @@ export function hasHighDPI() {
 /**
  * Devices with Function Keys
  *
- * @DEPRECATED since @mononow/utils v6.0.0
+ * @DEPRECATED since @arpon/utils v6.0.0
  *
  * @description A list of devices that have function keys
  * @returns {array}
@@ -505,7 +505,7 @@ export function hasHighDPI() {
 export const FUNCTION_KEYS_DEVICES = [MODELS.MP35P, MODELS.MP35];
 
 /**
- * @DEPRECATED since @mononow/utils v6.0.0
+ * @DEPRECATED since @arpon/utils v6.0.0
  *
  * @description If current model have function keys
  * @returns {boolean}

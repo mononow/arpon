@@ -1,4 +1,4 @@
-const { fromWorkingDir, getPackage } = require("@mononow/utils");
+const { fromWorkingDir, getPackage } = require("@arpon/utils");
 const pico = require("picocolors");
 
 const PKG = getPackage();

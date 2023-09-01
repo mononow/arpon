@@ -1,5 +1,5 @@
 {
-  "extends": "@mononow/configs/tsconfig.json",
+  "extends": "@arpon/configs/tsconfig.json",
   "compilerOptions": {
     "noEmit": true,
     "baseUrl": "./",

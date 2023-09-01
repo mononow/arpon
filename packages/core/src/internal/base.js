@@ -1,4 +1,4 @@
-const DEFAULT_GROUP_NAME = 'default';
+const DEFAULT_GROUP_NAME = "default";
 
 export default () => {
   const defaultGroup = {};
@@ -8,7 +8,9 @@ export default () => {
 
   const isSlotFilled = (signal, callback) => {
     const callbackList = currentGroup[signal];
-    return callbackList && callbackList.length && callbackList.indexOf(callback) > -1;
+    return (
+      callbackList && callbackList.length && callbackList.indexOf(callback) > -1
+    );
   };
 
   return {
@@ -36,7 +38,7 @@ export default () => {
 
     /** Connect a callback to a slot */
     on(signal, callback) {
-      if (typeof callback === 'function') {
+      if (typeof callback === "function") {
         if (!currentGroup[signal]) {
           currentGroup[signal] = [];
         }
@@ -51,13 +53,15 @@ export default () => {
     off(signal, callback) {
       const group = currentGroup;
       /** If no callback passed, disconnect all slots from the signal */
-      if (typeof callback === 'undefined') {
+      if (typeof callback === "undefined") {
         for (let i = group[signal].length; i--; ) {
           this[signal].disconnect(group[signal][i]);
         }
         delete group[signal];
       } else {
-        const slotIndex = group[signal].findIndex((slotCallback) => slotCallback === callback);
+        const slotIndex = group[signal].findIndex(
+          (slotCallback) => slotCallback === callback,
+        );
 
         if (slotIndex > -1) {
           this[signal].disconnect(group[signal][slotIndex]);
@@ -70,7 +74,7 @@ export default () => {
           }
         } else if (__DEV__) {
           console.warn(
-            `[@mononow/pos/driver] Tried to disconnect from "${signal}" a non-connected slot (group: ${currentGroupName}).`,
+            `[@arpon/pos/driver] Tried to disconnect from "${signal}" a non-connected slot (group: ${currentGroupName}).`,
           );
         }
       }
@@ -134,9 +138,11 @@ export default () => {
     },
 
     /** Destroy all signal listeners from a specified group */
-    destroyGroup(groupName = 'default') {
+    destroyGroup(groupName = "default") {
       if (!groups[groupName]) {
-        console.error(`[@mononow/pos/driver] Trying to destroy non existing group: '${groupName}'`);
+        console.error(
+          `[@arpon/pos/driver] Trying to destroy non existing group: '${groupName}'`,
+        );
         return;
       }
       this.group(groupName);

@@ -1,4 +1,4 @@
-# @mononow/commitlint-config-standard
+# @arpon/commitlint-config-standard
 
 [Commitlint](https://commitlint.js.org) and [Commitizen git-cz](https://github.com/streamich/git-cz)
 command line configurations of MONO.now projects.
@@ -66,11 +66,11 @@ Commit types with disabled Emoji:
 ## Usage
 
 1. Install [Commitizen](https://github.com/commitizen/cz-cli) globally and
-   `@mononow/commitlint-config-standard` locally:
+   `@arpon/commitlint-config-standard` locally:
 
 ```bash
 npm install -g commitizen #optional
-npm install --save-dev @mononow/commitlint-config-standard
+npm install --save-dev @arpon/commitlint-config-standard
 ```
 
 1. Add in your `package.json` add:
@@ -90,7 +90,7 @@ npm install --save-dev @mononow/commitlint-config-standard
 
 ```json
 {
-  "extends": ["@mononow/commitlint-config-standard"]
+  "extends": ["@arpon/commitlint-config-standard"]
 }
 ```
 

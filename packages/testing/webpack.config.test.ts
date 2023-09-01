@@ -1,14 +1,14 @@
-import type * as webpack from 'webpack';
+import type * as webpack from "webpack";
 
 // LOADERS
-import * as Loaders from '@mononow/babel-config/loader';
-import { TypeScript } from '@mononow/configs/loaders';
+import * as Loaders from "@arpon/babel-config/loader";
+import { TypeScript } from "@arpon/configs/loaders";
 
 const config: webpack.Configuration = {
-  mode: 'development',
+  mode: "development",
 
   resolve: {
-    extensions: ['.ts', '.js', '.mjs', '.cjs'],
+    extensions: [".ts", ".js", ".mjs", ".cjs"],
   },
 
   module: {

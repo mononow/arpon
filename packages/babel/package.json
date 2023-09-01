@@ -1,5 +1,5 @@
 {
-  "name": "@mononow/babel-config",
+  "name": "@arpon/babel-config",
   "description": "TS Babel preset config for Arpon SDK & Webpack 5",
   "version": "1.0.0",
   "license": "Apache-2.0",
@@ -24,6 +24,8 @@
     "directory": "packages/babel"
   },
   "dependencies": {
+    "@arpon/configs": "workspace:*",
+    "@arpon/utils": "workspace:*",
     "@babel/cli": "^7",
     "@babel/core": "^7",
     "@babel/plugin-proposal-class-properties": "^7",
@@ -33,8 +35,6 @@
     "@babel/plugin-transform-runtime": "^7",
     "@babel/preset-env": "^7",
     "@babel/preset-typescript": "^7",
-    "@mononow/configs": "workspace:*",
-    "@mononow/utils": "workspace:*",
     "babel-plugin-dynamic-import-node": "^2.3.3",
     "babel-plugin-istanbul": "^6.1.1",
     "babel-plugin-lodash": "^3.3.4",

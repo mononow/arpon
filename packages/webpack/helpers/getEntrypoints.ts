@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import * as webpack from "webpack";
-import { IS_BROWSER } from "@mononow/configs/envModes.cjs";
-import { fromWorkingDir } from "@mononow/utils";
+import { IS_BROWSER } from "@arpon/configs/envModes.cjs";
+import { fromWorkingDir } from "@arpon/utils";
 
 export default function getEntrypoints(): webpack.EntryObject {
   return {
@@ -14,7 +14,7 @@ export default function getEntrypoints(): webpack.EntryObject {
       // fromWorkingDir('./packages/static-polyfills/css-polyfills.min.js'),
 
       /** Arpon style resetter/normalizer */
-      `@mononow/styles/dist/${IS_BROWSER ? "desktop" : "pos"}.css`,
+      `@arpon/styles/dist/${IS_BROWSER ? "desktop" : "pos"}.css`,
 
       /** Optional generic external styles file */
       existsSync(fromWorkingDir("src", "app.pcss")) && "./app.pcss",

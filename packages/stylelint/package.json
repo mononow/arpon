@@ -1,5 +1,5 @@
 {
-  "name": "@mononow/stylelint-config",
+  "name": "@arpon/stylelint-config",
   "description": "Stylelint configuration for Arpon SDK",
   "version": "1.0.0",
   "license": "Apache-2.0",

@@ -12,14 +12,14 @@ Babel configs and presets:
 ## Usage
 
 ```bash
-npm install --save-dev @mononow/babel-config
+npm install --save-dev @arpon/babel-config
 ```
 
 #### With `.babelrc` at your project root:
 
 ```json
 {
-  "extends": "@mononow/babel-config"
+  "extends": "@arpon/babel-config"
 }
 ```
 
@@ -31,7 +31,7 @@ npm install --save-dev @mononow/babel-config
 
 ```ts
 import * as webpack from "webpack";
-import { Babel, BabelCJS, BabelSvelte } from "@mononow/babel-config";
+import { Babel, BabelCJS, BabelSvelte } from "@arpon/babel-config";
 
 const config: webpack.Configuration = {
   // ...

@@ -1,5 +1,5 @@
 {
-  "name": "@mononow/webpack",
+  "name": "@arpon/webpack",
   "version": "9.5.0",
   "description": "Webpack configs for Arpon applications",
   "author": "MONO.now",
@@ -24,10 +24,10 @@
     "npm": ">= 7"
   },
   "dependencies": {
+    "@arpon/babel-config": "workspace:*",
+    "@arpon/configs": "workspace:*",
+    "@arpon/utils": "workspace:*",
     "@babel/core": "^7",
-    "@mononow/babel-config": "workspace:*",
-    "@mononow/configs": "workspace:*",
-    "@mononow/utils": "workspace:*",
     "@types/html-minifier": "^4.0.2",
     "@types/node": ">=20",
     "babel-loader": "^9",

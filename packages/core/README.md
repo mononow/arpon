@@ -7,10 +7,10 @@ Pacotes principais do mononow com alguns códigos essenciais e compartilhados.
 Estenda um driver com o driver base.
 
 ```js
-import extendDriver from '@mononow/core/index.js';
+import extendDriver from "@arpon/core/index.js";
 
 /* Optional Driver wrapper path */
-import wrappers from './wrappers.js';
+import wrappers from "./wrappers.js";
 
 export default extendDriver(driverTarget, wrappers);
 ```
@@ -22,7 +22,7 @@ Fornece os mapas-chave e nomes-chave específicos do POS.
 ### KEY_NAMES
 
 ```js
-import { KEYBOARD } from '@mononow/core';
+import { KEYBOARD } from "@arpon/core";
 
 const { KEY_NAMES, KEY_NAMES_LIST } = KEYBOARD;
 
@@ -69,7 +69,7 @@ Values:
 ### KEY_CODES
 
 ```js
-import { KEYBOARD } from '@mononow/core';
+import { KEYBOARD } from "@arpon/core";
 
 const { KEY_CODES, KEY_CODES_LIST } = KEYBOARD;
 
@@ -120,7 +120,7 @@ Códigos de chave mapeados para nomes de chave
 [keyboard.getkeyname(keycode)]: #getkeynamekeycode
 
 ```js
-import { KEYBOARD } from '@mononow/core';
+import { KEYBOARD } from '@arpon/core';
 
 const { KEY_MAP, KEY_NAMES, KEY_1 } = KEYBOARD;
 
@@ -165,8 +165,8 @@ Digamos que você queira fazer alguma ação na tela com base em alguma chave PO
 <svelte:window on:keyup="onKeyup(event)" />
 
 <script>
-  import Keyboard from '@mononow/keyboard/api/index.js';
-  import { KEYBOARD } from '@mononow/core';
+  import Keyboard from "@arpon/keyboard/api/index.js";
+  import { KEYBOARD } from "@arpon/core";
 
   export default {
     methods: {

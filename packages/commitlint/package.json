@@ -1,5 +1,5 @@
 {
-  "name": "@mononow/commitlint-config-standard",
+  "name": "@arpon/commitlint-config-standard",
   "description": "Arpon standard conventional commits for git-cz and commitlint",
   "version": "0.0.10",
   "license": "Apache-2.0",

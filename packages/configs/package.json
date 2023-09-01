@@ -1,5 +1,5 @@
 {
-  "name": "@mononow/configs",
+  "name": "@arpon/configs",
   "version": "9.5.0",
   "description": "Defined tools and base configurations to use with Arpon projects. Normally, Webpack loaders with Svelte 3 configurations.",
   "author": "MONO.now",
@@ -43,8 +43,8 @@
     "prepublish": "yarn run test"
   },
   "dependencies": {
-    "@mononow/styles": "workspace:*",
-    "@mononow/utils": "workspace:*",
+    "@arpon/styles": "workspace:*",
+    "@arpon/utils": "workspace:*",
     "@testing-library/jest-dom": "^5.16.5",
     "@tsconfig/svelte": "^4.0.1",
     "autoprefixer": "^10.4.14",

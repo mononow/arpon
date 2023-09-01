@@ -2,7 +2,7 @@ const { writeFileSync } = require("fs");
 const Case = require("case");
 const inquirer = require("inquirer");
 const pico = require("picocolors");
-const { fromWorkingDir, getPackage } = require("@mononow/utils");
+const { fromWorkingDir, getPackage } = require("@arpon/utils");
 
 const { removeDiacritics, hashString } = require("../utils.js");
 const shell = require("../../../lib/shell.js");

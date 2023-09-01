@@ -8,20 +8,20 @@ MONO.now projects with [Svelte](https://svelte.dev) + [TypeScript](https://www.t
 1. Install:
 
 ```bash
-npm install --save-dev @mononow/prettier-config prettier svelte
+npm install --save-dev @arpon/prettier-config prettier svelte
 ```
 
 2. Add the the `.prettierrc` at your project root:
 
 ```json
-"@mononow/prettier-config"
+"@arpon/prettier-config"
 ```
 
 > Note: This method does not offer a way to extend the configuration to overwrite some properties from the shared configuration. If you need to do that, rename the file to .prettierrc.js (or `.prettierrc.cjs` if you use ESM) and export the modifications, e.g:
 >
 > ```js
 > module.exports = {
->   ...require("@mononow/prettier-config"),
+>   ...require("@arpon/prettier-config"),
 >   semi: false,
 > };
 > ```

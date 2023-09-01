@@ -1,6 +1,6 @@
-const IS_PROD = process.env.NODE_ENV === 'production';
-const { lineLength } = require('@mononow/prettier-config/shared.cjs');
-const { clientEnvironment } = require('@mononow/utils');
+const IS_PROD = process.env.NODE_ENV === "production";
+const { lineLength } = require("@arpon/prettier-config/shared.cjs");
+const { clientEnvironment } = require("@arpon/utils");
 
 module.exports = {
   root: true,
@@ -11,128 +11,128 @@ module.exports = {
     node: true,
   },
   extends: [
-    'eslint:recommended',
-    'airbnb-base',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:import/recommended',
-    'plugin:import/typescript',
-    'prettier',
-    'plugin:prettier/recommended',
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "prettier",
+    "plugin:prettier/recommended",
   ],
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    extraFileExtensions: ['.svelte'],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    extraFileExtensions: [".svelte"],
   },
-  plugins: ['@typescript-eslint', 'html', 'import', 'prettier'],
+  plugins: ["@typescript-eslint", "html", "import", "prettier"],
   globals: {
-    ...clientEnvironment('ESLint'),
+    ...clientEnvironment("ESLint"),
     ...{
-      __APP_ENV__: 'readonly',
-      __NODE_ENV__: 'readonly',
-      __BROWSER__: 'readonly',
-      __POS__: 'readonly',
-      __PROD__: 'readonly',
-      __TEST__: 'readonly',
-      __DEV__: 'readonly',
-      __DEBUG_LVL__: 'readonly',
-      __SIMULATOR__: 'readonly',
-      __APP_MANIFEST__: 'writable',
-      __PLATFORM_GENERIC__: 'writable',
-      __MODEL__: 'writable',
-      __PLATFORM__: 'writable',
-      __PLATFORM_S920__: 'writable',
-      __PLATFORM_Q92__: 'writable',
-      __PLATFORM_Q92S__: 'writable',
-      __PLATFORM_Q60__: 'writable',
-      __PLATFORM_D195__: 'writable',
-      __PLATFORM_D199__: 'writable',
-      __PLATFORM_MP35__: 'writable',
-      __PLATFORM_MP35P__: 'writable',
-      __PLATFORM_V240M__: 'writable',
-      __PLATFORM_D230__: 'writable',
-      __SUPPORT_SMALL_SCREEN__: 'writable',
-      DEVHOST_IP: 'readonly',
-      LOG_INFO: 'readonly',
-      LOG_ERROR: 'readonly',
-      LOG_WARN: 'readonly',
-      LOG: 'readonly',
-      window: 'readonly',
+      __APP_ENV__: "readonly",
+      __NODE_ENV__: "readonly",
+      __BROWSER__: "readonly",
+      __POS__: "readonly",
+      __PROD__: "readonly",
+      __TEST__: "readonly",
+      __DEV__: "readonly",
+      __DEBUG_LVL__: "readonly",
+      __SIMULATOR__: "readonly",
+      __APP_MANIFEST__: "writable",
+      __PLATFORM_GENERIC__: "writable",
+      __MODEL__: "writable",
+      __PLATFORM__: "writable",
+      __PLATFORM_S920__: "writable",
+      __PLATFORM_Q92__: "writable",
+      __PLATFORM_Q92S__: "writable",
+      __PLATFORM_Q60__: "writable",
+      __PLATFORM_D195__: "writable",
+      __PLATFORM_D199__: "writable",
+      __PLATFORM_MP35__: "writable",
+      __PLATFORM_MP35P__: "writable",
+      __PLATFORM_V240M__: "writable",
+      __PLATFORM_D230__: "writable",
+      __SUPPORT_SMALL_SCREEN__: "writable",
+      DEVHOST_IP: "readonly",
+      LOG_INFO: "readonly",
+      LOG_ERROR: "readonly",
+      LOG_WARN: "readonly",
+      LOG: "readonly",
+      window: "readonly",
     },
   },
   rules: {
     /** Prettier warning */
-    'prettier/prettier': 'error',
+    "prettier/prettier": "error",
 
     // ! Code
 
-    'no-console': IS_PROD ? ['warn', { allow: ['warn', 'error'] }] : 'off',
+    "no-console": IS_PROD ? ["warn", { allow: ["warn", "error"] }] : "off",
 
     /** Allow to use new for side effects */
-    'no-new': 'off',
+    "no-new": "off",
 
     /** Disallow variable declarations from shadowing variables declared in the outer scope */
-    'no-shadow': 'off',
+    "no-shadow": "off",
 
     /** Allow implicit return */
-    'consistent-return': 'off',
+    "consistent-return": "off",
 
     /** Allow ++ -- operators */
-    'no-plusplus': 'off',
+    "no-plusplus": "off",
 
     /** Allow to reassign method parameters */
-    'no-param-reassign': 'off',
+    "no-param-reassign": "off",
 
     /** Disallow implicit the location of arrow function bodies */
-    'implicit-arrow-linebreak': 'off',
+    "implicit-arrow-linebreak": "off",
 
     /** Force empty line after  */
-    'padding-line-between-statements': [
-      'error',
-      { blankLine: 'always', prev: ['block-like'], next: 'if' },
+    "padding-line-between-statements": [
+      "error",
+      { blankLine: "always", prev: ["block-like"], next: "if" },
     ],
 
     /** Allow operatorns stay after line break */
-    'operator-linebreak': [
-      'error',
-      'after',
+    "operator-linebreak": [
+      "error",
+      "after",
       {
-        overrides: { '?': 'before', ':': 'before' },
+        overrides: { "?": "before", ":": "before" },
       },
     ],
 
     /** Allow nested ? ternary : expressions ? ... : ...  */
-    'no-nested-ternary': 'off',
+    "no-nested-ternary": "off",
 
     /** Allow class methods to not use 'this' */
-    'class-methods-use-this': 'off',
+    "class-methods-use-this": "off",
 
     /** Disallows shorthand type conversions */
-    'no-implicit-coercion': [
-      'error',
+    "no-implicit-coercion": [
+      "error",
       {
         boolean: false,
         number: true,
         string: true,
-        allow: ['!!'],
+        allow: ["!!"],
         disallowTemplateShorthand: false,
       },
     ],
 
     /** Allow returning values from Promise executor functions */
-    'no-promise-executor-return': 'off',
+    "no-promise-executor-return": "off",
 
     // ! Style
 
     /** Not allow __variables__ with underscores */
-    'no-underscore-dangle': 'error',
+    "no-underscore-dangle": "error",
 
     /** Not allow both LF and CRLF line endings */
-    'linebreak-style': ['error', 'unix'],
+    "linebreak-style": ["error", "unix"],
 
-    'lines-around-comment': [
-      'error',
+    "lines-around-comment": [
+      "error",
       {
         beforeBlockComment: false,
         beforeLineComment: true,
@@ -140,41 +140,41 @@ module.exports = {
         allowObjectStart: true,
         allowArrayStart: true,
         allowObjectEnd: true,
-        ignorePattern: '//',
+        ignorePattern: "//",
       },
     ],
 
     /** Allow anonymous functions */
-    'func-names': 'off',
+    "func-names": "off",
 
     camelcase: [
-      'error',
+      "error",
       {
-        properties: 'never',
+        properties: "never",
         ignoreDestructuring: true,
       },
     ],
 
     // ! Import rules
     /** Not enforce file extensions on 'import' statements because ESM */
-    'import/extensions': 'off',
+    "import/extensions": "off",
 
     /** Don't complain about non-module svelte files */
-    'import/no-unresolved': [
-      'error',
+    "import/no-unresolved": [
+      "error",
       {
         ignore: [
-          '.(?:svelte|html)$',
-          '^(@mononow[\\/]|svelte-)',
-          '.(?:ts)$',
-          '(.*).PLATFORM(.(gif|jpe?g|png|ico|svg|bmp))',
+          ".(?:svelte|html)$",
+          "^(@mononow[\\/]|svelte-)",
+          ".(?:ts)$",
+          "(.*).PLATFORM(.(gif|jpe?g|png|ico|svg|bmp))",
         ],
       },
     ],
 
     /** Allow to import peer dependencies */
-    'import/no-extraneous-dependencies': [
-      'error',
+    "import/no-extraneous-dependencies": [
+      "error",
       {
         devDependencies: true,
         peerDependencies: true,
@@ -182,16 +182,16 @@ module.exports = {
     ],
 
     /** Warn to prefer to use default export or not */
-    'import/prefer-default-export': 'warn',
+    "import/prefer-default-export": "warn",
 
     // ! prettier override
 
     /** Disable indent to not conflict with prettier */
-    indent: 'off',
+    indent: "off",
 
     /** Max line length */
-    'max-len': [
-      'warn',
+    "max-len": [
+      "warn",
       lineLength,
       2,
       {
@@ -204,32 +204,36 @@ module.exports = {
     ],
 
     /** Require semicolons without enforcing */
-    semi: ['error', 'always'],
+    semi: ["error", "always"],
 
-    quotes: ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
+    quotes: [
+      "error",
+      "single",
+      { avoidEscape: true, allowTemplateLiterals: true },
+    ],
 
-    'comma-dangle': [
-      'error',
+    "comma-dangle": [
+      "error",
       {
-        arrays: 'always-multiline',
-        objects: 'always-multiline',
-        imports: 'always-multiline',
-        exports: 'always-multiline',
-        functions: 'always-multiline',
+        arrays: "always-multiline",
+        objects: "always-multiline",
+        imports: "always-multiline",
+        exports: "always-multiline",
+        functions: "always-multiline",
       },
     ],
 
     // ! TS global rules
 
-    '@typescript-eslint/no-shadow': 'error',
+    "@typescript-eslint/no-shadow": "error",
   },
   overrides: [
     {
-      files: ['*.svelte'],
-      parser: 'svelte-eslint-parser',
+      files: ["*.svelte"],
+      parser: "svelte-eslint-parser",
       parserOptions: {
-        parser: '@typescript-eslint/parser',
-        sourceType: 'module',
+        parser: "@typescript-eslint/parser",
+        sourceType: "module",
         ecmaVersion: 2021,
         ecmaFeatures: {
           globalReturn: false,
@@ -238,31 +242,36 @@ module.exports = {
         },
       },
       rules: {
-        'import/first': 'off',
-        'no-labels': 'off',
-        'import/no-mutable-exports': 'off',
-        'import/prefer-default-export': 'off',
-        'no-return-assign': 'off',
-        'no-inner-declarations': 'off',
-        'no-undef-init': 'off',
-        '@typescript-eslint/no-shadow': 'off',
-        '@typescript-eslint/no-unused-vars': 'off',
-        'no-restricted-syntax': ['error', 'ForInStatement', 'ForOfStatement', 'WithStatement'],
+        "import/first": "off",
+        "no-labels": "off",
+        "import/no-mutable-exports": "off",
+        "import/prefer-default-export": "off",
+        "no-return-assign": "off",
+        "no-inner-declarations": "off",
+        "no-undef-init": "off",
+        "@typescript-eslint/no-shadow": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "no-restricted-syntax": [
+          "error",
+          "ForInStatement",
+          "ForOfStatement",
+          "WithStatement",
+        ],
       },
     },
     {
-      files: ['*.js', '*.cjs'],
+      files: ["*.js", "*.cjs"],
       rules: {
-        '@typescript-eslint/class-name-casing': 'off',
-        '@typescript-eslint/no-var-requires': 'off',
+        "@typescript-eslint/class-name-casing": "off",
+        "@typescript-eslint/no-var-requires": "off",
       },
     },
     {
-      files: ['*.ts'],
+      files: ["*.ts"],
       rules: {
-        'lines-around-comment': 'off',
-        '@typescript-eslint/lines-around-comment': [
-          'error',
+        "lines-around-comment": "off",
+        "@typescript-eslint/lines-around-comment": [
+          "error",
           {
             allowEnumStart: true,
             allowEnumEnd: true,
@@ -280,20 +289,20 @@ module.exports = {
             allowObjectEnd: true,
           },
         ],
-        'no-restricted-exports': 'off',
-        'import/prefer-default-export': 'off',
+        "no-restricted-exports": "off",
+        "import/prefer-default-export": "off",
       },
     },
     {
-      files: ['**/*.spec.*', '**/*.test.*'],
+      files: ["**/*.spec.*", "**/*.test.*"],
       env: {
         jest: true,
       },
     },
   ],
   settings: {
-    'html/report-bad-indent': 'error',
-    'import/resolver': {
+    "html/report-bad-indent": "error",
+    "import/resolver": {
       typescript: true,
       node: true,
     },

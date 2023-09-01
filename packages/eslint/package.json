@@ -1,5 +1,5 @@
 {
-  "name": "@mononow/eslint-config",
+  "name": "@arpon/eslint-config",
   "description": "Stylelint configuration for Arpon SDK",
   "version": "1.0.0",
   "license": "Apache-2.0",
@@ -22,11 +22,11 @@
     "directory": "packages/eslint"
   },
   "dependencies": {
+    "@arpon/prettier-config": "workspace:*",
+    "@arpon/utils": "workspace:*",
     "@babel/core": "^7",
     "@babel/eslint-parser": "^7.21.8",
     "@babel/eslint-plugin": "^7.19.1",
-    "@mononow/prettier-config": "workspace:*",
-    "@mononow/utils": "workspace:*",
     "@typescript-eslint/eslint-plugin": "^5.59.6",
     "@typescript-eslint/parser": "^5.59.6",
     "eslint-config-airbnb-base": "^15.0.0",
