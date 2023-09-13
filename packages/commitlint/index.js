@@ -101,8 +101,6 @@ module.exports = {
       'configs',
       'tests',
       'components',
-      'simulator',
-      'pos',
       ...((isLernaState && getAllPackages(state)) || []),
     ],
 

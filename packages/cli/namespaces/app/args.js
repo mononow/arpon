@@ -20,12 +20,6 @@ module.exports = {
     default: false,
     type: 'boolean',
   },
-  simulator: {
-    description: 'Add the mononow simulator to the bundle (automatically added to target "browser")',
-    alias: ['s'],
-    default: false,
-    type: 'boolean',
-  },
   platform: {
     description: 'Choose the platform to build artifact',
     alias: ['pl'],
