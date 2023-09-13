@@ -12,7 +12,6 @@
     "commitlintplugin",
     "mononow",
     "commitlint",
-    "svelte",
     "git-cz",
     "cz-git",
     "mononow",

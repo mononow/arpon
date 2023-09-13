@@ -7,7 +7,6 @@
   "keywords": [
     "mononow",
     "webpack",
-    "svelte",
     "typescript"
   ],
   "repository": {
@@ -36,7 +35,6 @@
     "@testing-library/cypress": "^9.0.0",
     "@testing-library/dom": "^9.3.0",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/svelte": "^3.2.2",
     "@testing-library/user-event": "^14.4.3",
     "@types/cypress__code-coverage": "^3.10.0",
     "@types/jest": "^29.5.1",
@@ -55,19 +53,12 @@
     "jest-junit": "^16.0.0",
     "jest-transform-stub": "^2.0.0",
     "mocha": "^10.2.0",
-    "svelte-check": "^3.3.2",
-    "svelte-jester": "^2.3.2",
-    "svelte-preprocess": "^5",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1"
   },
   "peerDependencies": {
-    "@cypress/code-coverage": "^3",
-    "@testing-library/cypress": "^9",
-    "@testing-library/svelte": "^3",
     "@types/jest": "^29.5.1",
     "eslint": "^8",
-    "svelte": "^3",
     "typescript": "^5",
     "webpack": "^5"
   }

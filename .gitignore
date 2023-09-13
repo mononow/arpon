@@ -17,6 +17,7 @@ packages/**/*.d.*
 !packages/**/global.d.ts
 !packages/**/mononow.d.ts
 !packages/**/config.common.d.ts
+!packages/prettier/types.d.ts
 packages/**/*.map
 .tmp
 packages/**/dist
@@ -38,12 +39,8 @@ packages/components/Keyboard/lib
 packages/*.old
 
 ## Components examples
-/packages/components/*/example/*
 /packages/**/*.lock
 /packages/**/*-lock.json
-!/packages/components/*/example/static/
-!/packages/components/*/example/*.html
-!/packages/components/*/example/*.svelte
 
 # Test files
 coverage

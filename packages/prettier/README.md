@@ -21,7 +21,7 @@ npm install --save-dev @arpon/prettier-config prettier svelte
 >
 > ```js
 > module.exports = {
->   ...require("@arpon/prettier-config"),
+>   ...require('@arpon/prettier-config'),
 >   semi: false,
 > };
 > ```
@@ -54,27 +54,6 @@ Now every time you save your code, it will be formatted by Prettier...
 
 > For more info about editor and other integrations check the
 > [Prettier Docs ](https://prettier.io/docs/en/editors.html)
-
-#### Svelte integration
-
-In order to provide syntax highlighting and rich intellisense for Svelte components in VS Code,
-using the svelte language server you need to make some adjustments to your editor.
-
-1. Install the
-   [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
-   extension
-
-2. Then at your `.vscode/settings.json` file of your workspace, add the following settings:
-
-```json5
-// ! Keep Svelte extension to deal with svelte files, instead Prettier extension.
-"[svelte]": {
-  "editor.defaultFormatter": "svelte.svelte-vscode"
-}
-```
-
-> You can read all the features it provides at his
-> [GitHub Repo](https://github.com/sveltejs/language-tools/tree/master/packages/svelte-vscode)
 
 ## License
 

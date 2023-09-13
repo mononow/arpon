@@ -64,7 +64,13 @@ const state = {
   root: process.cwd(),
 };
 
-const isLernaState = isLerna(state);
+let isLernaState;
+
+try {
+  isLernaState = isLerna(state);
+} catch (error) {
+  /** no lerna */
+}
 
 /** @type {import('cz-git').UserConfig} */
 module.exports = {

@@ -3,39 +3,34 @@
  */
 module.exports = {
   rootDir: process.cwd(),
-  roots: ['src', 'tests'],
-  extensionsToTreatAsEsm: ['.ts', '.svelte'],
-  testMatch: ['**/?(*.)+(spec|test).+(ts|js)'],
+  roots: ["src", "tests"],
+  extensionsToTreatAsEsm: [".ts", ".tsx"],
+  testMatch: ["**/?(*.)+(spec|test).+(ts|js)"],
   transform: {
-    '^.+\\.ts$': [
-      'ts-jest',
+    "^.+\\.ts$": [
+      "ts-jest",
       {
         useESM: true,
       },
     ],
-    '^.+\\.js$': 'babel-jest',
-    '^.+\\.(html?|svelte)$': [
-      'svelte-jester',
-      {
-        preprocess: true,
-      },
-    ],
-    '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
+    "^.+\\.js$": "babel-jest",
+    ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$":
+      "jest-transform-stub",
   },
-  moduleFileExtensions: ['js', 'ts', 'svelte'],
-  testEnvironment: 'jsdom',
+  moduleFileExtensions: ["js", "ts", "tsx"],
+  testEnvironment: "jsdom",
   moduleNameMapper: {
-    '^@c(.*)$': '<rootDir>/src/components$1',
-    '^@(\\/.*)$': '<rootDir>/src$1',
+    "^@c(.*)$": "<rootDir>/src/components$1",
+    "^@(\\/.*)$": "<rootDir>/src$1",
   },
-  testPathIgnorePatterns: ['./node_modules/', '/e2e/'],
-  moduleDirectories: ['node_modules'],
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  testPathIgnorePatterns: ["./node_modules/", "/e2e/"],
+  moduleDirectories: ["node_modules"],
+  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
   bail: false,
   verbose: true,
   globals: {
-    __NODE_ENV__: 'test',
-    __APP_ENV__: 'browser',
+    __NODE_ENV__: "test",
+    __APP_ENV__: "browser",
     __PROD__: false,
     __TEST__: true,
     __DEV__: true,
@@ -44,22 +39,25 @@ module.exports = {
   },
   collectCoverage: true,
   collectCoverageFrom: [
-    '<rootDir>/tests/**/*.ts',
-    '<rootDir>/src/**/?(*.)+(ts|svelte)',
-    '!<rootDir>/src/**/*.d.ts',
-    '!**/node_modules/**',
-    '!*.d.ts',
+    "<rootDir>/tests/**/*.ts",
+    "<rootDir>/src/**/?(*.)+(ts|tsx)",
+    "!<rootDir>/src/**/*.d.ts",
+    "!**/node_modules/**",
+    "!*.d.ts",
   ],
-  coverageReporters: [/* 'clover', */ 'lcov', 'cobertura'],
+  coverageReporters: [/* 'clover', */ "lcov", "cobertura"],
   reporters: [
-    'default',
-    ['jest-junit', { outputDirectory: 'reports', outputName: 'tests-results.unit.xml' }],
+    "default",
+    [
+      "jest-junit",
+      { outputDirectory: "reports", outputName: "tests-results.unit.xml" },
+    ],
   ],
-  coverageProvider: 'v8',
-  coverageDirectory: '<rootDir>/reports',
+  coverageProvider: "v8",
+  coverageDirectory: "<rootDir>/reports",
   coverageThreshold: {
     global: {},
-    '**/*.svelte': {
+    "**/*.tsx": {
       branches: 0,
     },
   },

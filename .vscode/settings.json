@@ -1,39 +1,3 @@
 {
-  "emmet.showExpandedAbbreviation": "always",
-  /** Associate css files to postcss language */
-  "files.associations": {
-    "*.css": "postcss"
-  },
-  "editor.quickSuggestions": {
-    "strings": true
-  },
-  /** Enforce the extension use appropriate syntax for us. If invalid, VSCode will notify. */
-  "stylelint.customSyntax": "postcss-html",
-  /** Specifying which files to validate */
-  "stylelint.validate": [
-    "css",
-    "postcss",
-    "html"
-  ],
-  /** Emmet completion in postcss context */
-  "emmet.includeLanguages": {
-    "svelte": "html",
-    "postcss": "css"
-  },
-  "emmet.syntaxProfiles": {
-    "postcss": "css"
-  },
-  "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
-  },
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "svelte"
-  ],
-  "svelte.plugin.typescript.enable": true,
-  "svelte.enable-ts-plugin": true,
   "javascript.suggestionActions.enabled": false,
-  "svelte.plugin.css.diagnostics.enable": false,
-  "editor.tabCompletion": "on",
 }

@@ -31,16 +31,16 @@ npm install --save-dev @arpon/babel-config
 
 ```ts
 import * as webpack from "webpack";
-import { Babel, BabelCJS, BabelSvelte } from "@arpon/babel-config";
+import { Babel, BabelCJS, BabelReact } from "@arpon/babel-config";
 
 const config: webpack.Configuration = {
   // ...
   module: {
     rules: [
       {
-        test: /\.svelte$/,
+        test: /\.tsx$/,
         exclude: /node_modules/,
-        use: [BabelSvelte, Svelte],
+        use: [BabelReact],
       },
       {
         test: /\.ts$/,

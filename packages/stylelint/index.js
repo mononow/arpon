@@ -1,10 +1,5 @@
 module.exports = {
-  extends: [
-    'stylelint-config-html/html',
-    'stylelint-config-html/svelte',
-    'stylelint-config-standard',
-    'stylelint-prettier',
-  ],
+  extends: ['stylelint-config-html/html', 'stylelint-config-standard', 'stylelint-prettier'],
   customSyntax: 'postcss-html',
 
   /** Report when a unnecessary stylelint disable comment is written */
@@ -81,18 +76,13 @@ module.exports = {
       {
         ignoreProperties: '/font/',
 
-        /** Ignore svelte inline style values */
+        /** Ignore  inline style values */
         ignoreKeywords: '/{.*?}/',
       },
     ],
 
     /** Limit the number of adjacent empty lines (Autofixable). */
     'max-empty-lines': 2,
-
-    /** Svelte related */
-
-    /** Allow svelte :global() */
-    'selector-pseudo-class-no-unknown': null,
 
     /**
      * Since stylelint reads all 'ref:*' as the same selector,

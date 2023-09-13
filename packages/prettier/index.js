@@ -8,7 +8,7 @@ module.exports = {
   bracketSpacing: true,
   bracketSameLine: false,
   singleQuote: true,
-  plugins: ['prettier-plugin-svelte'],
+  plugins: [],
   pluginSearchDirs: false,
   overrides: [
     {

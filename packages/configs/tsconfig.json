@@ -1,5 +1,4 @@
 {
-  "extends": "@tsconfig/svelte/tsconfig.json",
   "typeAcquisition": {
     "enable": true
   },
@@ -14,13 +13,16 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "verbatimModuleSyntax": false,
+    "verbatimModuleSyntax": true,
     "forceConsistentCasingInFileNames": true,
     "types": [
-      "svelte",
       "jest",
       "@testing-library/jest-dom"
-    ]
+    ],
+    "sourceMap": true,
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
   },
   "exclude": [
     "node_modules",

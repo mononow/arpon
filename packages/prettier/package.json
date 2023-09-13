@@ -3,29 +3,29 @@
   "description": "Prettier config for Arpon SDK",
   "version": "1.0.0",
   "license": "Apache-2.0",
-  "main": "index.js",
+  "main": "./index.js",
+  "types": "./types.d.ts",
+  "type": "commonjs",
   "publishConfig": {
     "access": "public"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "types.d.ts",
+    "shared.cjs"
   ],
   "keywords": [
     "mononow",
     "prettier",
-    "mononow"
+    "arpon"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/mononow/arpon.git",
     "directory": "packages/prettier"
   },
-  "dependencies": {
-    "prettier-plugin-svelte": "^2.10.0"
-  },
   "peerDependencies": {
-    "prettier": "^2.8.0",
-    "svelte": "^3.2.0",
+    "prettier": "^3",
     "typescript": "^5"
   }
 }

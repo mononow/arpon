@@ -34,7 +34,7 @@ npm install --save-dev @arpon/stylelint-config stylelint
 {
   extends: [
     'stylelint-config-html/html',
-    'stylelint-config-html/svelte',
+    'stylelint-config-html/react',
     'stylelint-config-standard',
     'stylelint-prettier',
   ],

@@ -91,7 +91,7 @@ const config: webpack.Configuration = {
     enforceExtension: false,
     alias: (() => {
       const aliases: { [x: string]: string } = {
-        svelte: fromWorkingDir("node_modules", "svelte"),
+        react: fromWorkingDir("node_modules", "react"),
       };
 
       if (IS_BROWSER && PKG && PKG.mononow && PKG.mononow.iconPath) {
@@ -101,7 +101,7 @@ const config: webpack.Configuration = {
 
       return aliases;
     })(),
-    conditionNames: ["svelte"],
+    conditionNames: ["tsx"],
     mainFields: ["browser", "esnext", "jsnext:main", "module", "main"],
     extensions: [
       ...scriptExtensions,
@@ -109,14 +109,14 @@ const config: webpack.Configuration = {
       ".pcss",
       ".css",
       ".html",
-      ".svelte",
+      ".tsx",
     ],
   },
 
   module: {
     rules: [
       {
-        test: /\.(html|svelte)$/,
+        test: /\.(html|tsx)$/,
         exclude: /node_modules/,
         use: [BabelSvelte, Svelte],
       },
@@ -131,35 +131,8 @@ const config: webpack.Configuration = {
         exclude: [/node_modules/],
         use: [Babel],
       },
-
-      /**
-       * * Run app COMMONJS dependencies through babel with module: 'commonjs'.
-       * @babel/preset-env inserts es6 import if we don't pass "module: 'commonjs'",
-       * resulting in mixed es6 and commonjs code.
-       * */
-      /* {
-        test: {
-          ...transpileIgnoreBaseCondition,
-          and: [isOfModuleType('cjs')],
-        },
-        use: [BabelCJS],
-      }, */
-      /** Run app ES6 dependencies through babel with { modules: false } */
-      /* {
-        resource: [/\.js$/, /node_modules/],
-        test: {
-          ...transpileIgnoreBaseCondition,
-          and: [isOfModuleType('es')],
-        },
-        use: [Babel],
-      }, */
-      /* {
-        test: /\.m?js$/,
-        exclude: /node_modules/,
-        use: [Linaria],
-      }, */
       {
-        test: /node_modules\/svelte\/.*\.mjs$/,
+        test: /node_modules\/react\/.*\.mjs$/,
         resolve: {
           fullySpecified: false,
         },

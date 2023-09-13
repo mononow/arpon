@@ -1,6 +1,3 @@
-// Svelte
-export { default as Svelte } from './svelte/loader';
-
 // Css
 export { default as Css } from './css/loader';
 export { default as ExtractCss } from './extract-css/loader';

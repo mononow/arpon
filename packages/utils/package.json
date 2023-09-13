@@ -62,6 +62,5 @@
       "src/client/index.ts"
     ],
     "dts": true
-  },
-  "gitHead": "e919d0e654f8134f157bf4f6e078685f5dd8a000"
+  }
 }

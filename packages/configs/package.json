@@ -6,7 +6,6 @@
   "keywords": [
     "mononow",
     "webpack",
-    "svelte",
     "typescript"
   ],
   "repository": {
@@ -23,9 +22,9 @@
     "./postcss/*": "./postcss/*",
     "./index.d.ts": "./index.d.ts",
     "./envModes.cjs": "./envModes.cjs",
-    "./svelte": {
-      "import": "./svelte/index.js",
-      "require": "./svelte/index.cjs"
+    "./react": {
+      "import": "./react/index.js",
+      "require": "./react/index.cjs"
     },
     "./package.json": "./package.json",
     "./tsconfig.json": "./tsconfig.json"
@@ -70,13 +69,10 @@
     "postcss-reporter": "^7.0.5",
     "postcss-sorting": "^8.0.2",
     "resolve-url-loader": "^5.0.0",
-    "svelte-loader": "3.1.5",
-    "svelte-preprocess": "^5",
     "ts-loader": "^9",
     "url-loader": "^4.1.1"
   },
   "peerDependencies": {
-    "svelte": "^3",
     "typescript": "^5"
   },
   "devDependencies": {
@@ -86,6 +82,5 @@
   },
   "optionalDependencies": {
     "webpack": "^5"
-  },
-  "gitHead": "e919d0e654f8134f157bf4f6e078685f5dd8a000"
+  }
 }
