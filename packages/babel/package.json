@@ -1,6 +1,6 @@
 {
   "name": "@arpon/babel-config",
-  "description": "TS Babel preset config for Arpon SDK & Webpack 5",
+  "description": "TS Babel preset config for Arpon (For React)",
   "version": "1.0.0",
   "license": "Apache-2.0",
   "main": "index.cjs",
@@ -11,9 +11,7 @@
   "keywords": [
     "mononow",
     "babel",
-    "mononow",
-    "webpack",
-    "typescript"
+    "arpon"
   ],
   "files": [
     "*"
@@ -34,6 +32,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7",
     "@babel/plugin-transform-runtime": "^7",
     "@babel/preset-env": "^7",
+    "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7",
     "babel-plugin-dynamic-import-node": "^2.3.3",
     "babel-plugin-istanbul": "^6.1.1",
@@ -49,6 +48,7 @@
   },
   "peerDependencies": {
     "jest": "^29.5.0",
+    "next": "^13",
     "typescript": "^5"
   },
   "optionalDependencies": {

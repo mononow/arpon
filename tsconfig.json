@@ -1,9 +1,26 @@
 {
   "extends": "@arpon/configs/tsconfig.json",
   "compilerOptions": {
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "moduleResolution": "node",
     "noEmit": true,
+    "allowJs": true,
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "baseUrl": "./",
+    "jsx": "preserve",
   },
+  "types": [
+    "node",
+    "react"
+  ],
   "exclude": [
     "**/.*/",
     "**/node_modules"

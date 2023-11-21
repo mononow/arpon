@@ -203,6 +203,11 @@ module.exports = {
       },
     ],
 
+    // ! React rules
+
+    // Impossible enabling this with so many props.
+    'react/jsx-props-no-spreading': 'off',
+
     // ! TS global rules
 
     '@typescript-eslint/no-shadow': 'error',

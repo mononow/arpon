@@ -30,8 +30,8 @@ npm install --save-dev @arpon/babel-config
 - `BabelCJS`: Used for transpiling (if you need target a ESNext module to old browser).
 
 ```ts
-import * as webpack from "webpack";
-import { Babel, BabelCJS, BabelReact } from "@arpon/babel-config";
+import * as webpack from 'webpack';
+import { Babel, BabelCJS, BabelReact } from '@arpon/babel-config';
 
 const config: webpack.Configuration = {
   // ...
