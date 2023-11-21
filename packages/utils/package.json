@@ -1,7 +1,7 @@
 {
   "name": "@arpon/utils",
   "version": "10.0.0",
-  "description": "Utility methods for mononow apps",
+  "description": "Utility methods for manydots apps",
   "type": "module",
   "main": "./dist/node/index.js",
   "types": "./dist/node/index.d.ts",
@@ -24,14 +24,14 @@
     "./package.json": "./package.json"
   },
   "sideEffects": false,
-  "author": "MONO.now",
+  "author": "Many Dots",
   "keywords": [
-    "mononow",
+    "manydots",
     "utils"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mononow/arpon.git",
+    "url": "https://github.com/manydots/arpon.git",
     "directory": "packages/utils"
   },
   "publishConfig": {

@@ -12,13 +12,13 @@
   },
   "keywords": [
     "stylelint-config",
-    "mononow",
+    "manydots",
     "stylelint",
-    "mononow"
+    "manydots"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mononow/arpon.git",
+    "url": "https://github.com/manydots/arpon.git",
     "directory": "packages/stylelint"
   },
   "devDependencies": {

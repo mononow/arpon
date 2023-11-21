@@ -103,7 +103,7 @@ __metadata:
   peerDependencies:
     typescript: ^5
   bin:
-    mononow: ./cli.js
+    manydots: ./cli.js
   languageName: unknown
   linkType: soft
 
@@ -3289,9 +3289,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mononow/arpon@workspace:.":
+"@manydots/arpon@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@mononow/arpon@workspace:."
+  resolution: "@manydots/arpon@workspace:."
   dependencies:
     "@babel/cli": "npm:^7"
     "@babel/core": "npm:^7"

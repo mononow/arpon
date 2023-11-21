@@ -2,15 +2,15 @@
   "name": "@arpon/configs",
   "version": "9.5.0",
   "description": "Defined tools and base configurations to use with Arpon projects. Normally, Webpack loaders with Svelte 3 configurations.",
-  "author": "MONO.now",
+  "author": "Many Dots",
   "keywords": [
-    "mononow",
+    "manydots",
     "webpack",
     "typescript"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mononow/arpon.git",
+    "url": "https://github.com/manydots/arpon.git",
     "directory": "packages/configs"
   },
   "publishConfig": {

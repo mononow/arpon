@@ -1,46 +1,46 @@
-const { writeFileSync } = require("fs");
-const Case = require("case");
-const inquirer = require("inquirer");
-const pico = require("picocolors");
-const { fromWorkingDir, getPackage } = require("@arpon/utils");
+const { writeFileSync } = require('fs');
+const Case = require('case');
+const inquirer = require('inquirer');
+const pico = require('picocolors');
+const { fromWorkingDir, getPackage } = require('@arpon/utils');
 
-const { removeDiacritics, hashString } = require("../utils.js");
-const shell = require("../../../lib/shell.js");
+const { removeDiacritics, hashString } = require('../utils.js');
+const shell = require('../../../lib/shell.js');
 
-const REPO = "mononow/mononow-app-template";
+const REPO = 'manydots/manydots-app-template';
 
-/** Create a new mononow app directory */
+/** Create a new manydots app directory */
 module.exports = {
-  command: "app <targetDir>",
-  desc: "Create a new app directory",
+  command: 'app <targetDir>',
+  desc: 'Create a new app directory',
   handler({ targetDir, force }) {
     targetDir = fromWorkingDir(targetDir);
     inquirer
       .prompt([
         {
-          type: "input",
-          name: "name",
-          message: "Name",
+          type: 'input',
+          name: 'name',
+          message: 'Name',
           validate: (str) => !!str.length,
         },
         {
-          type: "input",
-          name: "version",
-          message: "Version",
-          default: "0.0.1",
-          validate: (str) => str.split(".").length >= 3,
+          type: 'input',
+          name: 'version',
+          message: 'Version',
+          default: '0.0.1',
+          validate: (str) => str.split('.').length >= 3,
         },
         {
-          type: "input",
-          name: "description",
-          message: "Description",
+          type: 'input',
+          name: 'description',
+          message: 'Description',
           validate: (str) => !!str.length,
         },
       ])
       .then(({ name, version, description }) => {
-        console.log(pico.cyan("Downloading template..."));
+        console.log(pico.cyan('Downloading template...'));
 
-        shell(`npx degit ${REPO} "${targetDir}" ${force ? "-f" : ""}`);
+        shell(`npx degit ${REPO} "${targetDir}" ${force ? '-f' : ''}`);
 
         console.log(pico.cyan("Setupping 'package.json'"));
 
@@ -62,23 +62,20 @@ module.exports = {
         pkgJson.version = version;
         pkgJson.description = description;
 
-        pkgJson.mononow.appCreationDate = formattedDate;
-        pkgJson.mononow.id = parseInt(
+        pkgJson.manydots.appCreationDate = formattedDate;
+        pkgJson.manydots.id = parseInt(
           hashString(normalizedName + formattedDate + description)
             .toString()
             .slice(0, 5),
           10,
         );
-        pkgJson.mononow.appName = name;
+        pkgJson.manydots.appName = name;
 
         delete pkgJson.rootDir;
 
-        writeFileSync(
-          fromWorkingDir(targetDir, "package.json"),
-          JSON.stringify(pkgJson, null, 2),
-        );
+        writeFileSync(fromWorkingDir(targetDir, 'package.json'), JSON.stringify(pkgJson, null, 2));
 
-        console.log(pico.cyan("Installing dependencies"));
+        console.log(pico.cyan('Installing dependencies'));
         shell([`cd ${targetDir}`, `npm i`]);
 
         console.log(pico.green(`App created at '${targetDir}'`));
@@ -86,13 +83,13 @@ module.exports = {
   },
   builder: (yargs) =>
     yargs
-      .positional("targetDir", {
-        describe: "Directory to create the app",
-        type: "string",
+      .positional('targetDir', {
+        describe: 'Directory to create the app',
+        type: 'string',
       })
-      .option("force", {
-        description: "Overwrite target directory",
-        alias: ["f"],
+      .option('force', {
+        description: 'Overwrite target directory',
+        alias: ['f'],
         default: false,
       }),
 };

@@ -2,15 +2,15 @@
   "name": "@arpon/date",
   "version": "10.5.0",
   "description": "Arpon date module",
-  "author": "MONO.now",
+  "author": "Many Dots",
   "type": "module",
   "keywords": [
-    "mononow",
+    "manydots",
     "date"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mononow/arpon.git",
+    "url": "https://github.com/manydots/arpon.git",
     "directory": "packages/date"
   },
   "publishConfig": {

@@ -2,7 +2,7 @@
   "name": "@arpon/cli",
   "version": "10.0.0",
   "description": "Arpon CLI",
-  "author": "MONO.now",
+  "author": "Many Dots",
   "license": "Apache-2.0",
   "engines": {
     "node": ">= 14",
@@ -12,7 +12,7 @@
     "access": "public"
   },
   "bin": {
-    "mononow": "./cli.js"
+    "manydots": "./cli.js"
   },
   "dependencies": {
     "@arpon/utils": "workspace:*",

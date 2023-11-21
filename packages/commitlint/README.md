@@ -1,7 +1,7 @@
 # @arpon/commitlint-config-standard
 
 [Commitlint](https://commitlint.js.org) and [Commitizen git-cz](https://github.com/streamich/git-cz)
-command line configurations of MONO.now projects.
+command line configurations of Many Dots projects.
 
 Minimal questions config:
 

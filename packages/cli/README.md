@@ -23,16 +23,16 @@
 
 ## Commands
 
-- `mononow app <command>`
+- `manydots app <command>`
 
-  - `mononow app start`
+  - `manydots app start`
     Starts the development server at `localhost:8080`.
 
-  - `mononow app build`
+  - `manydots app build`
     Builds the app for the POS.
 
-- `mononow pos <command>`
-  - `mononow pos ssh-init [--tty Pos0]` - Initializes the POS SSH server
-  - `mononow pos start` - Starts the Arpon System
-  - `mononow pos stop` - Kills the Arpon System
-  - `mononow pos restart` - Restarts the Arpon System
+- `manydots pos <command>`
+  - `manydots pos ssh-init [--tty Pos0]` - Initializes the POS SSH server
+  - `manydots pos start` - Starts the Arpon System
+  - `manydots pos stop` - Kills the Arpon System
+  - `manydots pos restart` - Restarts the Arpon System

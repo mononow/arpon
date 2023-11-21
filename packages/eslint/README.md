@@ -14,7 +14,7 @@ npm install --save-dev @arpon/eslint-config eslint
 
 ```json
 {
-  "extends": "@mononow"
+  "extends": "@manydots"
 }
 ```
 

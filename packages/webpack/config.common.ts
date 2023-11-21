@@ -1,21 +1,15 @@
 /// <reference types="./config.common.d.ts" />
-import * as webpack from "webpack";
-import { merge } from "webpack-merge";
-import { fromWorkingDir, clientEnvironment, getPackage } from "@arpon/utils";
-import {
-  Css,
-  ExtractCss,
-  PostCss,
-  Svelte,
-  TypeScript,
-} from "@arpon/configs/loaders";
-import { Babel, BabelSvelte } from "@arpon/babel-config/loader";
+import * as webpack from 'webpack';
+import { merge } from 'webpack-merge';
+import { fromWorkingDir, clientEnvironment, getPackage } from '@arpon/utils';
+import { Css, ExtractCss, PostCss, Svelte, TypeScript } from '@arpon/configs/loaders';
+import { Babel, BabelSvelte } from '@arpon/babel-config/loader';
 
 // Plugins
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { MiniHtmlWebpackPlugin } from "mini-html-webpack-plugin";
-import ESLintPlugin from "eslint-webpack-plugin";
-import LodashModuleReplacementPlugin from "lodash-webpack-plugin";
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { MiniHtmlWebpackPlugin } from 'mini-html-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
+import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
 import {
   IS_PROD,
   NODE_ENV,
@@ -26,22 +20,22 @@ import {
   IS_POS,
   IS_TEST,
   IS_STORYBOOK,
-} from "@arpon/configs/envModes.cjs";
+} from '@arpon/configs/envModes.cjs';
 
-import ArponLogger from "./plugins/InfrastructureMamaLogger";
+import ArponLogger from './plugins/InfrastructureMamaLogger';
 
-import getHTMLTemplate from "./helpers/getHTMLTemplate";
+import getHTMLTemplate from './helpers/getHTMLTemplate';
 
 const PKG = getPackage();
 const warningsFilter = [/source-map-loader/, /Failed to parse source map/];
 
-type DefineObject = Record<string, webpack.DefinePlugin["definitions"]>;
+type DefineObject = Record<string, webpack.DefinePlugin['definitions']>;
 
-const definePluginOptions = merge(clientEnvironment("Webpack"), {
+const definePluginOptions = merge(clientEnvironment('Webpack'), {
   __APP_MANIFEST__: (() => {
     try {
       if (PKG) {
-        const { id = undefined, appName = undefined } = PKG.mononow || {};
+        const { id = undefined, appName = undefined } = PKG.manydots || {};
         const slug = id && appName ? `${id}-${appName}` : undefined;
 
         return JSON.stringify({
@@ -49,7 +43,7 @@ const definePluginOptions = merge(clientEnvironment("Webpack"), {
           description: PKG.appDescription,
           version: PKG.appVersion,
           slug,
-          ...PKG.mononow,
+          ...PKG.manydots,
         });
       }
     } catch (error) {
@@ -70,20 +64,20 @@ const definePluginOptions = merge(clientEnvironment("Webpack"), {
   __PLATFORM__: JSON.stringify(process.env.PLATFORM),
 }) as DefineObject;
 
-const scriptExtensions = [".mjs", ".js", ".cjs", ".ts"];
+const scriptExtensions = ['.mjs', '.js', '.cjs', '.ts'];
 
 const config: webpack.Configuration = {
-  mode: IS_PROD ? "production" : "development",
+  mode: IS_PROD ? 'production' : 'development',
   cache: true,
-  target: "web",
+  target: 'web',
   node: false,
-  context: fromWorkingDir("src"),
+  context: fromWorkingDir('src'),
   output: {
-    path: fromWorkingDir("dist"),
-    publicPath: "/",
-    filename: "[name].[fullhash:5].js",
-    chunkFilename: "[name].[fullhash:5].js",
-    assetModuleFilename: "[path][name].[ext][query]",
+    path: fromWorkingDir('dist'),
+    publicPath: '/',
+    filename: '[name].[fullhash:5].js',
+    chunkFilename: '[name].[fullhash:5].js',
+    assetModuleFilename: '[path][name].[ext][query]',
   },
 
   resolve: {
@@ -91,26 +85,19 @@ const config: webpack.Configuration = {
     enforceExtension: false,
     alias: (() => {
       const aliases: { [x: string]: string } = {
-        react: fromWorkingDir("node_modules", "react"),
+        react: fromWorkingDir('node_modules', 'react'),
       };
 
-      if (IS_BROWSER && PKG && PKG.mononow && PKG.mononow.iconPath) {
+      if (IS_BROWSER && PKG && PKG.manydots && PKG.manydots.iconPath) {
         // eslint-disable-next-line no-underscore-dangle
-        aliases.__APP_ICON__ = fromWorkingDir("src", PKG.mononow.iconPath);
+        aliases.__APP_ICON__ = fromWorkingDir('src', PKG.manydots.iconPath);
       }
 
       return aliases;
     })(),
-    conditionNames: ["tsx"],
-    mainFields: ["browser", "esnext", "jsnext:main", "module", "main"],
-    extensions: [
-      ...scriptExtensions,
-      ".json",
-      ".pcss",
-      ".css",
-      ".html",
-      ".tsx",
-    ],
+    conditionNames: ['tsx'],
+    mainFields: ['browser', 'esnext', 'jsnext:main', 'module', 'main'],
+    extensions: [...scriptExtensions, '.json', '.pcss', '.css', '.html', '.tsx'],
   },
 
   module: {
@@ -127,7 +114,7 @@ const config: webpack.Configuration = {
       },
       {
         test: /\.(c|m)?js$/,
-        include: [fromWorkingDir("src")],
+        include: [fromWorkingDir('src')],
         exclude: [/node_modules/],
         use: [Babel],
       },
@@ -143,18 +130,18 @@ const config: webpack.Configuration = {
       },
       {
         test: /\.txt$/,
-        type: "asset/source",
+        type: 'asset/source',
       },
     ],
   },
   plugins: [
     new ArponLogger(),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: '[name].css',
     }),
     new MiniHtmlWebpackPlugin({
       context: {
-        title: PKG?.name ?? "Application",
+        title: PKG?.name ?? 'Application',
         jsAttributes: {
           defer: true,
         },
@@ -167,29 +154,29 @@ const config: webpack.Configuration = {
     !IS_STORYBOOK &&
       new ESLintPlugin({
         extensions: scriptExtensions,
-        exclude: ["index.browser.ts", "index.pos.ts"],
+        exclude: ['index.browser.ts', 'index.pos.ts'],
       }),
   ].filter(Boolean) as webpack.WebpackPluginInstance[],
 
   /* Split Chunks with POS polyfills */
   optimization: {
-    chunkIds: "named",
-    moduleIds: "named",
+    chunkIds: 'named',
+    moduleIds: 'named',
 
     /** Create a separate chunk for webpack runtime */
-    runtimeChunk: { name: "runtime" },
+    runtimeChunk: { name: 'runtime' },
     splitChunks: {
-      chunks: "all",
+      chunks: 'all',
       minSize: 0,
       minChunks: 1,
-      automaticNameDelimiter: "_",
+      automaticNameDelimiter: '_',
       cacheGroups: {
         default: false,
         libs: {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
           name(_: unknown, chunks: webpack.Chunk[], cacheGroupKey: string) {
-            const allChunksNames = chunks.map((item) => item.name).join("~");
+            const allChunksNames = chunks.map((item) => item.name).join('~');
             return `${cacheGroupKey}_${allChunksNames}`;
           },
           /**
@@ -201,7 +188,7 @@ const config: webpack.Configuration = {
         },
         polyfills: {
           test: /core-js/,
-          name: "polyfills",
+          name: 'polyfills',
           priority: 10,
         },
       },

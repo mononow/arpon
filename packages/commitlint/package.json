@@ -10,17 +10,17 @@
   "keywords": [
     "conventional-commits",
     "commitlintplugin",
-    "mononow",
+    "manydots",
     "commitlint",
     "git-cz",
     "cz-git",
-    "mononow",
+    "manydots",
     "sdk",
     "git"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mononow/arpon.git",
+    "url": "https://github.com/manydots/arpon.git",
     "directory": "packages/commitlint"
   },
   "dependencies": {

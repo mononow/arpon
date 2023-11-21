@@ -1,48 +1,40 @@
-import { join } from "node:path";
-import { existsSync } from "node:fs";
-import * as webpack from "webpack";
-import { merge } from "webpack-merge";
-import {
-  BUNDLE_NAME,
-  IS_PROD,
-  ORG_ASSETS_FOLDER,
-} from "@arpon/configs/envModes.cjs";
-import { fromWorkingDir, getPackage } from "@arpon/utils";
+import { join } from 'node:path';
+import { existsSync } from 'node:fs';
+import * as webpack from 'webpack';
+import { merge } from 'webpack-merge';
+import { BUNDLE_NAME, IS_PROD, ORG_ASSETS_FOLDER } from '@arpon/configs/envModes.cjs';
+import { fromWorkingDir, getPackage } from '@arpon/utils';
 
 // Plugins
-import FileManagerPlugin from "filemanager-webpack-plugin";
-import CSSMinimizerPlugin from "css-minimizer-webpack-plugin";
-import TerserPlugin from "terser-webpack-plugin";
-import ArponManifestPlugin from "./plugins/ArponManifestPlugin";
+import FileManagerPlugin from 'filemanager-webpack-plugin';
+import CSSMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import ArponManifestPlugin from './plugins/ArponManifestPlugin';
 
 // Base config
-import appConfig from "./config.app";
+import appConfig from './config.app';
 
 const PKG = getPackage();
 
-const hasOrgFolder = existsSync(join(fromWorkingDir("src"), ORG_ASSETS_FOLDER));
+const hasOrgFolder = existsSync(join(fromWorkingDir('src'), ORG_ASSETS_FOLDER));
 
 const config: webpack.Configuration = merge<webpack.Configuration>(appConfig, {
   devtool: false,
   plugins: [
-    // Generate mononow xml manifest
+    // Generate manydots xml manifest
     new ArponManifestPlugin(),
 
     // Copy and generate static files to bundle
     new FileManagerPlugin({
       events: {
         onStart: {
-          delete: [
-            `dist/${BUNDLE_NAME}`,
-            `dist/${BUNDLE_NAME}.tar.gz`,
-            `dist/${BUNDLE_NAME}.ppk`,
-          ],
+          delete: [`dist/${BUNDLE_NAME}`, `dist/${BUNDLE_NAME}.tar.gz`, `dist/${BUNDLE_NAME}.ppk`],
         },
         onEnd: {
           copy: [
             {
-              source: `src/${PKG.mononow.iconPath}`,
-              destination: `dist/${BUNDLE_NAME}/${PKG.mononow.iconPath}`,
+              source: `src/${PKG.manydots.iconPath}`,
+              destination: `dist/${BUNDLE_NAME}/${PKG.manydots.iconPath}`,
             },
             hasOrgFolder && {
               source: `src/${ORG_ASSETS_FOLDER}`,
@@ -53,7 +45,7 @@ const config: webpack.Configuration = merge<webpack.Configuration>(appConfig, {
             {
               source: `dist/${BUNDLE_NAME}/`,
               destination: `dist/${BUNDLE_NAME}.tar.gz`,
-              format: "tar",
+              format: 'tar',
               options: {
                 gzip: true,
                 gzipOptions: { level: 1 },
@@ -61,10 +53,8 @@ const config: webpack.Configuration = merge<webpack.Configuration>(appConfig, {
             },
             {
               source: `dist/${BUNDLE_NAME}/`,
-              destination: `dist/${PKG.name}${
-                PKG.appVersion ? `_v${PKG.appVersion}` : ""
-              }.ppk`,
-              format: "zip",
+              destination: `dist/${PKG.name}${PKG.appVersion ? `_v${PKG.appVersion}` : ''}.ppk`,
+              format: 'zip',
               options: {
                 gzip: true,
                 gzipOptions: { level: 1 },
@@ -81,7 +71,7 @@ const config: webpack.Configuration = merge<webpack.Configuration>(appConfig, {
   ].filter(Boolean) as webpack.WebpackPluginInstance[],
   optimization: {
     minimize: IS_PROD,
-    moduleIds: "deterministic",
+    moduleIds: 'deterministic',
     minimizer: [
       /** Minify the bundle's css */
       new CSSMinimizerPlugin(),
@@ -97,19 +87,19 @@ const config: webpack.Configuration = merge<webpack.Configuration>(appConfig, {
             reduce_funcs: false,
             keep_infinity: true,
             pure_funcs: [
-              "classCallCheck",
-              "_classCallCheck",
-              "_possibleConstructorReturn",
-              "Object.freeze",
-              "invariant",
-              "warning",
+              'classCallCheck',
+              '_classCallCheck',
+              '_possibleConstructorReturn',
+              'Object.freeze',
+              'invariant',
+              'warning',
             ],
           },
           mangle: {
             keep_fnames: false,
 
             /** Prevent renaming of `process.env...` */
-            reserved: ["process"],
+            reserved: ['process'],
           },
         },
       }),

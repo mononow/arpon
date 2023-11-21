@@ -1,11 +1,8 @@
 /// <reference types="mini-html-webpack-plugin/dist/index.d.ts" />
-import pico from "picocolors";
-import {
-  generateCSSReferences,
-  generateJSReferences,
-} from "mini-html-webpack-plugin";
-import { minify as htmlMinify } from "html-minifier";
-import { getPackage } from "@arpon/utils";
+import pico from 'picocolors';
+import { generateCSSReferences, generateJSReferences } from 'mini-html-webpack-plugin';
+import { minify as htmlMinify } from 'html-minifier';
+import { getPackage } from '@arpon/utils';
 
 import {
   IS_BROWSER,
@@ -16,7 +13,7 @@ import {
   WEINRE_IP,
   HTML_BASE_URL,
   REMOTEJS,
-} from "@arpon/configs/envModes.cjs";
+} from '@arpon/configs/envModes.cjs';
 
 const PKG = getPackage();
 
@@ -62,8 +59,8 @@ type TemplateParameters = {
 export default function getHTMLTemplate({
   css = [],
   js = [],
-  publicPath = "",
-  title = "",
+  publicPath = '',
+  title = '',
   cssAttributes = {},
   jsAttributes = {},
 }: TemplateParameters) {
@@ -79,7 +76,7 @@ export default function getHTMLTemplate({
     publicPath,
   });
 
-  let lazyApp = "";
+  let lazyApp = '';
 
   // Usefull to catch errors on launch
   if (IS_DEV && !IS_WATCHING()) {
@@ -100,22 +97,18 @@ export default function getHTMLTemplate({
     const ipRegEx = /\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.|$)){4}\b/gm;
     const isValidIp = ipRegEx.test(WEINRE_IP);
     if (!isValidIp) {
-      pico.yellow(
-        `\n\n ⚠️ Invalid IP ${WEINRE_IP} for WEINRE_IP environment variable!`,
-      );
+      pico.yellow(`\n\n ⚠️ Invalid IP ${WEINRE_IP} for WEINRE_IP environment variable!`);
     }
 
     if (isValidIp) {
       weinre = `<script src="http://${WEINRE_IP}:9000/target/target-script-min.js#anonymous"></script>`;
 
       // eslint-disable-next-line no-console
-      process.on("exit", () =>
+      process.on('exit', () =>
         console.log(
-          pico.cyan(
-            "\n\n Weinre(WEb INspector REmote) is enabled. \n To start server, run: ",
-          ),
+          pico.cyan('\n\n Weinre(WEb INspector REmote) is enabled. \n To start server, run: '),
           pico.yellow(
-            "weinre --boundHost=-all- --httpPort=9000 --readTimeout=8 --deathTimeout=60 \n\n",
+            'weinre --boundHost=-all- --httpPort=9000 --readTimeout=8 --deathTimeout=60 \n\n',
           ),
         ),
       );
@@ -140,26 +133,24 @@ export default function getHTMLTemplate({
   const htmlTemplate = `<!DOCTYPE html>
   <html>
     <head>
-      ${baseUrl || ""}
+      ${baseUrl || ''}
       <meta charset="UTF-8">
       <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0"/>
-      ${IS_BROWSER ? '<meta name="mobile-web-app-capable" content="yes">' : ""}
+      ${IS_BROWSER ? '<meta name="mobile-web-app-capable" content="yes">' : ''}
       <title>${title}</title>
       ${cssTags}
-      ${font || ""}
+      ${font || ''}
       ${
-        !IS_POS &&
-        typeof PKG.mononow === "object" &&
-        typeof PKG.mononow.iconPath === "string"
-          ? `<link rel="shortcut icon" href="${PKG.mononow.iconPath}" type="image/x-icon">`
-          : ""
+        !IS_POS && typeof PKG.manydots === 'object' && typeof PKG.manydots.iconPath === 'string'
+          ? `<link rel="shortcut icon" href="${PKG.manydots.iconPath}" type="image/x-icon">`
+          : ''
       }
     </head>
     <body id="app-root">
       ${jsTags}
-      ${weinre || ""}
+      ${weinre || ''}
       ${lazyApp}
-      ${remotejs || ""}
+      ${remotejs || ''}
     </body>
   </html>`;
 

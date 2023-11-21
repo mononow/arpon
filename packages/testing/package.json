@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "description": "Svelte / Unit / E2E testing configuration for Arpon applications",
   "type": "module",
-  "author": "MONO.now",
+  "author": "Many Dots",
   "keywords": [
-    "mononow",
+    "manydots",
     "webpack",
     "typescript"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mononow/arpon.git",
+    "url": "https://github.com/manydots/arpon.git",
     "directory": "packages/testing"
   },
   "types": "index.d.ts",

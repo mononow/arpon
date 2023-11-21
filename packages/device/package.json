@@ -2,15 +2,15 @@
   "name": "@arpon/device",
   "version": "10.5.0",
   "description": "Arpon device module",
-  "author": "MONO.now",
+  "author": "Many Dots",
   "type": "module",
   "keywords": [
-    "mononow",
+    "manydots",
     "devices"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mononow/arpon.git",
+    "url": "https://github.com/manydots/arpon.git",
     "directory": "packages/device"
   },
   "publishConfig": {

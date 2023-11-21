@@ -15,13 +15,13 @@
     "shared.cjs"
   ],
   "keywords": [
-    "mononow",
+    "manydots",
     "prettier",
     "arpon"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mononow/arpon.git",
+    "url": "https://github.com/manydots/arpon.git",
     "directory": "packages/prettier"
   },
   "peerDependencies": {

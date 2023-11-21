@@ -1,7 +1,7 @@
 # Arpon Prettier Config
 
 [Prettier](https://prettier.io/docs/en/index.html) config of
-MONO.now projects with [Svelte](https://svelte.dev) + [TypeScript](https://www.typescriptlang.org).
+Many Dots projects with [Svelte](https://svelte.dev) + [TypeScript](https://www.typescriptlang.org).
 
 ## Usage
 

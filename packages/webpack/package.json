@@ -2,16 +2,16 @@
   "name": "@arpon/webpack",
   "version": "9.5.0",
   "description": "Webpack configs for Arpon applications",
-  "author": "MONO.now",
+  "author": "Many Dots",
   "type": "module",
   "keywords": [
-    "mononow",
+    "manydots",
     "webpack",
     "typescript"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mononow/arpon.git",
+    "url": "https://github.com/manydots/arpon.git",
     "directory": "packages/webpack"
   },
   "publishConfig": {

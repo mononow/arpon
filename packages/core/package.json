@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "description": "Arpon core bindings, wrappers, constants, and handlers",
-  "author": "MONO.now",
+  "author": "Many Dots",
   "license": "Apache-2.0",
   "files": [
     "*",
@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mononow/arpon.git",
+    "url": "git+https://github.com/manydots/arpon.git",
     "directory": "packages/core"
   },
   "scripts": {

@@ -1,9 +1,9 @@
 {
-  "name": "@mononow/arpon",
+  "name": "@manydots/arpon",
   "version": "3.0.0",
   "description": "SDK for developing in the Arpon web environment",
-  "repository": "https://github.com/mononow/arpon.git",
-  "author": "MONO.now",
+  "repository": "https://github.com/manydots/arpon.git",
+  "author": "Many Dots",
   "private": true,
   "workspaces": [
     "packages/*",

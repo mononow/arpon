@@ -149,7 +149,7 @@ module.exports = {
       {
         ignore: [
           '.(?:tsx|html)$',
-          '^(@mononow[\\/]|tsx-)',
+          '^(@manydots[\\/]|tsx-)',
           '.(?:ts)$',
           '(.*).PLATFORM(.(gif|jpe?g|png|ico|svg|bmp))',
         ],

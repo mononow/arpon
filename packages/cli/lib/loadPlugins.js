@@ -1,9 +1,9 @@
-const { existsSync, statSync, readdirSync } = require("fs");
-const { resolve } = require("path");
-const importGlobal = require("import-global");
-const globalDirs = require("global-dirs");
+const { existsSync, statSync, readdirSync } = require('fs');
+const { resolve } = require('path');
+const importGlobal = require('import-global');
+const globalDirs = require('global-dirs');
 
-const isNotFoundError = (err) => err.code === "MODULE_NOT_FOUND";
+const isNotFoundError = (err) => err.code === 'MODULE_NOT_FOUND';
 
 function loadCommand(moduleName) {
   let plugin;
@@ -30,20 +30,17 @@ const getPackagesFrom = (path, includedStr) => {
 
 const pkgListPaths = [
   globalDirs.npm.packages,
-  globalDirs.npm.packages !== globalDirs.yarn.packages &&
-    globalDirs.yarn.packages,
-  resolve(process.cwd(), "node_modules"),
+  globalDirs.npm.packages !== globalDirs.yarn.packages && globalDirs.yarn.packages,
+  resolve(process.cwd(), 'node_modules'),
 ].filter(Boolean);
 
 const externalPlugins = pkgListPaths.reduce((acc, pkgListPath) => {
   try {
-    const orgPluginPath = resolve(pkgListPath, "@mononow");
+    const orgPluginPath = resolve(pkgListPath, '@manydots');
     return [
       ...acc,
-      ...getPackagesFrom(pkgListPath, "mononow-cli-plugin-"),
-      ...getPackagesFrom(orgPluginPath, "cli-plugin-").map(
-        (pkg) => `@arpon/${pkg}`,
-      ),
+      ...getPackagesFrom(pkgListPath, 'manydots-cli-plugin-'),
+      ...getPackagesFrom(orgPluginPath, 'cli-plugin-').map((pkg) => `@arpon/${pkg}`),
     ];
   } catch (_) {
     return [];

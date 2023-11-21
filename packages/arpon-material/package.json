@@ -1,21 +1,21 @@
 {
   "name": "@arpon/material",
   "version": "0.0.1",
-  "author": "MONO.now",
+  "author": "Many Dots",
   "description": "A library of Svelte UI components and fundamental elements for Arpon",
   "main": "./src/index.js",
   "publishConfig": {
     "access": "public"
   },
   "keywords": [
-    "mononow",
+    "manydots",
     "arpon",
     "typescript",
     "ui"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mononow/arpon.git",
+    "url": "https://github.com/manydots/arpon.git",
     "directory": "packages/arpon"
   },
   "license": "Apache-2.0",

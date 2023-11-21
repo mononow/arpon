@@ -9,7 +9,7 @@
     "access": "public"
   },
   "keywords": [
-    "mononow",
+    "manydots",
     "babel",
     "arpon"
   ],
@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mononow/arpon.git",
+    "url": "https://github.com/manydots/arpon.git",
     "directory": "packages/babel"
   },
   "dependencies": {

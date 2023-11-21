@@ -12,17 +12,10 @@ node_modules
 dist
 dist-ssr
 *.local
-packages/**/*.d.*
-!packages/**/index.d.ts
-!packages/**/global.d.ts
-!packages/**/mononow.d.ts
-!packages/**/config.common.d.ts
-!packages/prettier/types.d.ts
-packages/**/*.map
 .tmp
 packages/**/dist
 packages/**/types
-packages/components/Keyboard/lib
+/docs/.next
 
 # Editor directories and files
 .vscode/*
@@ -36,23 +29,6 @@ packages/components/Keyboard/lib
 *.njsproj
 *.sln
 *.sw?
-packages/*.old
-
-## Components examples
-/packages/**/*.lock
-/packages/**/*-lock.json
-
-# Test files
-coverage
-cypress/videos
-cypress/screenshots
-cypress/reports
-e2e/videos
-e2e/screenshots
-e2e/reports
-reports
-.nyc_output
-
 
 # yarn 2
 .pnp.*

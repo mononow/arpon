@@ -2,15 +2,15 @@
   "name": "@arpon/currency",
   "version": "10.0.0",
   "description": "Arpon currency module",
-  "author": "MONO.now",
+  "author": "Many Dots",
   "keywords": [
-    "mononow",
+    "manydots",
     "money",
     "currency"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mononow/arpon.git",
+    "url": "https://github.com/manydots/arpon.git",
     "directory": "packages/currency"
   },
   "publishConfig": {

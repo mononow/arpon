@@ -1,6 +1,6 @@
 # Arpon Stylelint Config
 
-> A sharable [Stylelint](https://stylelint.io/) configuration that enforce CSS rules of MONO.now projects.
+> A sharable [Stylelint](https://stylelint.io/) configuration that enforce CSS rules of Many Dots projects.
 
 ## Install
 
@@ -22,7 +22,7 @@ npm install --save-dev @arpon/stylelint-config stylelint
 >
 > ```js
 > module.exports = {
->   extends: " @arpon/stylelint-config",
+>   extends: ' @arpon/stylelint-config',
 >   // ... overwrites
 > };
 > ```
