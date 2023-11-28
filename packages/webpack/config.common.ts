@@ -1,64 +1,31 @@
 /// <reference types="./config.common.d.ts" />
 import * as webpack from 'webpack';
 import { merge } from 'webpack-merge';
-import { fromWorkingDir, clientEnvironment, getPackage } from '@arpon/utils';
-import { Css, ExtractCss, PostCss, Svelte, TypeScript } from '@arpon/configs/loaders';
-import { Babel, BabelSvelte } from '@arpon/babel-config/loader';
+import { fromWorkingDir, clientEnvironment } from '@arpon/utils';
 
 // Plugins
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { MiniHtmlWebpackPlugin } from 'mini-html-webpack-plugin';
-import ESLintPlugin from 'eslint-webpack-plugin';
-import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
+
 import {
   IS_PROD,
   NODE_ENV,
-  APP_ENV,
   IS_DEV,
   DEBUG_LVL,
   IS_BROWSER,
-  IS_POS,
   IS_TEST,
-  IS_STORYBOOK,
 } from '@arpon/configs/envModes.cjs';
 
 import ArponLogger from './plugins/InfrastructureMamaLogger';
 
-import getHTMLTemplate from './helpers/getHTMLTemplate';
-
-const PKG = getPackage();
 const warningsFilter = [/source-map-loader/, /Failed to parse source map/];
 
 type DefineObject = Record<string, webpack.DefinePlugin['definitions']>;
 
 const definePluginOptions = merge(clientEnvironment('Webpack'), {
-  __APP_MANIFEST__: (() => {
-    try {
-      if (PKG) {
-        const { id = undefined, appName = undefined } = PKG.manydots || {};
-        const slug = id && appName ? `${id}-${appName}` : undefined;
-
-        return JSON.stringify({
-          name: PKG.defaultName,
-          description: PKG.appDescription,
-          version: PKG.appVersion,
-          slug,
-          ...PKG.manydots,
-        });
-      }
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.warn(error);
-    }
-    return {};
-  })(),
   __NODE_ENV__: JSON.stringify(NODE_ENV),
-  __APP_ENV__: JSON.stringify(APP_ENV),
   __PROD__: IS_PROD,
   __TEST__: IS_TEST(),
   __DEV__: IS_DEV,
   __DEBUG_LVL__: DEBUG_LVL,
-  __POS__: IS_POS,
   __BROWSER__: IS_BROWSER,
   __MODEL__: JSON.stringify(process.env.PLATFORM),
   __PLATFORM__: JSON.stringify(process.env.PLATFORM),
@@ -88,11 +55,6 @@ const config: webpack.Configuration = {
         react: fromWorkingDir('node_modules', 'react'),
       };
 
-      if (IS_BROWSER && PKG && PKG.manydots && PKG.manydots.iconPath) {
-        // eslint-disable-next-line no-underscore-dangle
-        aliases.__APP_ICON__ = fromWorkingDir('src', PKG.manydots.iconPath);
-      }
-
       return aliases;
     })(),
     conditionNames: ['tsx'],
@@ -103,60 +65,14 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       {
-        test: /\.(html|tsx)$/,
-        exclude: /node_modules/,
-        use: [BabelSvelte, Svelte],
-      },
-      {
-        test: /\.ts$/,
-        exclude: [/node_modules/],
-        use: [Babel, TypeScript],
-      },
-      {
-        test: /\.(c|m)?js$/,
-        include: [fromWorkingDir('src')],
-        exclude: [/node_modules/],
-        use: [Babel],
-      },
-      {
-        test: /node_modules\/react\/.*\.mjs$/,
-        resolve: {
-          fullySpecified: false,
-        },
-      },
-      {
-        test: /\.(p?css)$/,
-        use: [ExtractCss, Css, PostCss],
-      },
-      {
         test: /\.txt$/,
         type: 'asset/source',
       },
     ],
   },
-  plugins: [
-    new ArponLogger(),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-    }),
-    new MiniHtmlWebpackPlugin({
-      context: {
-        title: PKG?.name ?? 'Application',
-        jsAttributes: {
-          defer: true,
-        },
-      },
-      template: getHTMLTemplate,
-    }),
-    new webpack.DefinePlugin(definePluginOptions),
-    new LodashModuleReplacementPlugin(),
-
-    !IS_STORYBOOK &&
-      new ESLintPlugin({
-        extensions: scriptExtensions,
-        exclude: ['index.browser.ts', 'index.pos.ts'],
-      }),
-  ].filter(Boolean) as webpack.WebpackPluginInstance[],
+  plugins: [new ArponLogger(), new webpack.DefinePlugin(definePluginOptions)].filter(
+    Boolean,
+  ) as webpack.WebpackPluginInstance[],
 
   /* Split Chunks with POS polyfills */
   optimization: {

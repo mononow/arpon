@@ -15,10 +15,10 @@
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
     "forceConsistentCasingInFileNames": true,
-    "types": [
+    /* "types": [
       "jest",
       "@testing-library/jest-dom"
-    ],
+    ], */
     "sourceMap": true,
     "strict": false,
     "esModuleInterop": true,
